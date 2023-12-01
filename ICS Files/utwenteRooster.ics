@@ -1,0 +1,1242 @@
+BEGIN:VCALENDAR
+PRODID:-//Eveoh//Eveoh iCalExporter 1.3//EN
+VERSION:2.0
+METHOD:PUBLISH
+CALSCALE:GREGORIAN
+X-WR-TIMEZONE:Europe/Brussels
+X-WR-CALNAME:University of Twente - Personal timetable: T. Schurink
+X-WR-CALDESC:University of Twente - Personal timetable: T. Schurink
+BEGIN:VTIMEZONE
+TZID:Europe/Brussels
+LAST-MODIFIED:20230911T053111Z
+TZURL:https://www.tzurl.org/zoneinfo-outlook/Europe/Brussels
+X-LIC-LOCATION:Europe/Brussels
+BEGIN:DAYLIGHT
+TZNAME:CEST
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZNAME:CET
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231117T084500
+DTEND;TZID=Europe/Brussels:20231117T103000
+SUMMARY:Wireless Communications & Networking 202300111
+LOCATION:WA 3
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!5A95D691DF8BFA6A06F0A9E5B7FF3342-2023-W46-1@rooster.utwente.nl
+DESCRIPTION:Type: Lecture\n\nLocation(s):\nWA 3: https://www.utwente.nl/e
+ n/cfm/study/lectures/overview/#carr%C3%A9-hal-b-waaier\n\nStaff member(s
+ ): S Bayhan\n\nStudent set(s): MI MOD10 Cyber Physical Systems Group 01\
+ , MI MOD10 Cyber Physical Systems Group 02\n\nThis appointment is manage
+ d by MyTimetable.\n\nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231120T084500
+DTEND;TZID=Europe/Brussels:20231120T153000
+SUMMARY:Formal Specification and Hybrid Systems 202300111
+LOCATION:HB 2D
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!F75BDBD718C5A54BAA15025F9F0A3BCF-2023-W47-1@rooster.utwente.nl
+DESCRIPTION:Type: Tutorial\n\nLocation(s):\nHB 2D: https://www.utwente.nl
+ /en/cfm/study/lectures/overview/#carr%C3%A9-hal-b-waaier\n\nStaff member
+ (s): R Langerak\n\nStudent set(s): MI MOD10 Cyber Physical Systems Group
+  01\, MI MOD10 Cyber Physical Systems Group 02\n\nThis appointment is ma
+ naged by MyTimetable.\n\nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231120T154500
+DTEND;TZID=Europe/Brussels:20231120T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:OH 115
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!1FE51B2F8A980AC8CC926A8FC5DA2466-2023-W47-1@rooster.utwente.nl
+DESCRIPTION:Type: Lecture\n\nLocation(s):\nOH 115: https://www.utwente.nl
+ /en/cfm/study/lectures/overview/#horst\n\nStaff member(s): GJ Heijenk\, 
+ R Langerak\, S Bayhan\n\nStudent set(s): MI MOD10 Cyber Physical Systems
+  Group 01\, MI MOD10 Cyber Physical Systems Group 02\n\nThis appointment
+  is managed by MyTimetable.\n\nLast synchronised on 2023-12-01 at 12:40 
+ CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231121T134500
+DTEND;TZID=Europe/Brussels:20231121T163000
+SUMMARY:Cooperative Autonomous Driving 202300111
+LOCATION:OH 211
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!1469F2F960DF7C36887A02503724C3E4-2023-W47-1@rooster.utwente.nl
+DESCRIPTION:Type: Tutorial\n\nLocation(s):\nOH 211: https://www.utwente.n
+ l/en/cfm/study/lectures/overview/#horst\n\nStaff member(s): GJ Heijenk\n
+ \nStudent set(s): MI MOD10 Cyber Physical Systems Group 01\, MI MOD10 Cy
+ ber Physical Systems Group 02\n\nThis appointment is managed by MyTimeta
+ ble.\n\nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231122T084500
+DTEND;TZID=Europe/Brussels:20231122T163000
+SUMMARY:Embedded Machine Learning 202300111
+LOCATION:CR 3G
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!3F8D5FDA6BA132E7B8656403089F4D38-2023-W47-1@rooster.utwente.nl
+DESCRIPTION:Type: Practical\n\nLocation(s):\nCR 3G: https://www.utwente.n
+ l/en/cfm/study/lectures/overview/#carr%C3%A9-hal-b-waaier\n\nStaff membe
+ r(s): DV Le Viet Duc\, PJM Havinga\n\nStudent set(s): MI MOD10 Cyber Phy
+ sical Systems Group 02\n\nThis appointment is managed by MyTimetable.\n\
+ nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231123T134500
+DTEND;TZID=Europe/Brussels:20231123T173000
+SUMMARY:Embedded Machine Learning 202300111
+LOCATION:CR 2L
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!5A95D691DF8BFA6A06F0A9E5B7FF3374-2023-W47-1@rooster.utwente.nl
+DESCRIPTION:Type: Tutorial\n\nLocation(s):\nCR 2L: https://www.utwente.nl
+ /en/cfm/study/lectures/overview/#carr%C3%A9-hal-b-waaier\n\nStaff member
+ (s): DV Le Viet Duc\, PJM Havinga\n\nStudent set(s): MI MOD10 Cyber Phys
+ ical Systems Group 02\n\nThis appointment is managed by MyTimetable.\n\n
+ Last synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231124T084500
+DTEND;TZID=Europe/Brussels:20231124T103000
+SUMMARY:Wireless Communications & Networking 202300111
+LOCATION:HR N109
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!5A95D691DF8BFA6A06F0A9E5B7FF3337-2023-W47-1@rooster.utwente.nl
+DESCRIPTION:Type: Lecture\n\nLocation(s):\nHR N109: https://www.utwente.n
+ l/en/cfm/study/lectures/overview/#horst\n\nStaff member(s): S Bayhan\n\n
+ Student set(s): MI MOD10 Cyber Physical Systems Group 01\, MI MOD10 Cybe
+ r Physical Systems Group 02\n\nThis appointment is managed by MyTimetabl
+ e.\n\nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231127T084500
+DTEND;TZID=Europe/Brussels:20231127T153000
+SUMMARY:Formal Specification and Hybrid Systems 202300111
+LOCATION:HB 2D
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!F75BDBD718C5A54BAA15025F9F0A3BCF-2023-W48-1@rooster.utwente.nl
+DESCRIPTION:Type: Tutorial\n\nLocation(s):\nHB 2D: https://www.utwente.nl
+ /en/cfm/study/lectures/overview/#carr%C3%A9-hal-b-waaier\n\nStaff member
+ (s): R Langerak\n\nStudent set(s): MI MOD10 Cyber Physical Systems Group
+  01\, MI MOD10 Cyber Physical Systems Group 02\n\nThis appointment is ma
+ naged by MyTimetable.\n\nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231128T134500
+DTEND;TZID=Europe/Brussels:20231128T163000
+SUMMARY:Cooperative Autonomous Driving 202300111
+LOCATION:OH 218
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!7CE640EBF7403AFA62E13DC217095DCE-2023-W48-1@rooster.utwente.nl
+DESCRIPTION:Type: Tutorial\n\nLocation(s):\nOH 218: https://www.utwente.n
+ l/en/cfm/study/lectures/overview/#horst\n\nStaff member(s): GJ Heijenk\n
+ \nStudent set(s): MI MOD10 Cyber Physical Systems Group 01\, MI MOD10 Cy
+ ber Physical Systems Group 02\n\nThis appointment is managed by MyTimeta
+ ble.\n\nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231129T084500
+DTEND;TZID=Europe/Brussels:20231129T103000
+SUMMARY:Embedded Machine Learning 202300111
+LOCATION:CR 2L
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!5A95D691DF8BFA6A06F0A9E5B7FF3367-2023-W48-1@rooster.utwente.nl
+DESCRIPTION:Type: Tutorial\n\nLocation(s):\nCR 2L: https://www.utwente.nl
+ /en/cfm/study/lectures/overview/#carr%C3%A9-hal-b-waaier\n\nStaff member
+ (s): DV Le Viet Duc\, PJM Havinga\n\nStudent set(s): MI MOD10 Cyber Phys
+ ical Systems Group 02\n\nThis appointment is managed by MyTimetable.\n\n
+ Last synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231129T104500
+DTEND;TZID=Europe/Brussels:20231129T173000
+SUMMARY:Embedded Machine Learning 202300111
+LOCATION:CR 3G
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!5A95D691DF8BFA6A06F0A9E5B7FF3362-2023-W48-1@rooster.utwente.nl
+DESCRIPTION:Type: Practical\n\nLocation(s):\nCR 3G: https://www.utwente.n
+ l/en/cfm/study/lectures/overview/#carr%C3%A9-hal-b-waaier\n\nStaff membe
+ r(s): DV Le Viet Duc\, PJM Havinga\n\nStudent set(s): MI MOD10 Cyber Phy
+ sical Systems Group 02\n\nThis appointment is managed by MyTimetable.\n\
+ nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231130T134500
+DTEND;TZID=Europe/Brussels:20231130T173000
+SUMMARY:Embedded Machine Learning 202300111
+LOCATION:CR 2L
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!5A95D691DF8BFA6A06F0A9E5B7FF3374-2023-W48-1@rooster.utwente.nl
+DESCRIPTION:Type: Tutorial\n\nLocation(s):\nCR 2L: https://www.utwente.nl
+ /en/cfm/study/lectures/overview/#carr%C3%A9-hal-b-waaier\n\nStaff member
+ (s): DV Le Viet Duc\, PJM Havinga\n\nStudent set(s): MI MOD10 Cyber Phys
+ ical Systems Group 02\n\nThis appointment is managed by MyTimetable.\n\n
+ Last synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231201T084500
+DTEND;TZID=Europe/Brussels:20231201T103000
+SUMMARY:Wireless Communications & Networking 202300111
+LOCATION:HR N109
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!5A95D691DF8BFA6A06F0A9E5B7FF3337-2023-W48-1@rooster.utwente.nl
+DESCRIPTION:Type: Lecture\n\nLocation(s):\nHR N109: https://www.utwente.n
+ l/en/cfm/study/lectures/overview/#horst\n\nStaff member(s): S Bayhan\n\n
+ Student set(s): MI MOD10 Cyber Physical Systems Group 01\, MI MOD10 Cybe
+ r Physical Systems Group 02\n\nThis appointment is managed by MyTimetabl
+ e.\n\nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231204T154500
+DTEND;TZID=Europe/Brussels:20231204T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:RA 4231\, RA 4334
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!50B9AF7983B1A0FB08A14EE780BE564A-2023-W49-1@rooster.utwente.nl
+DESCRIPTION:Type: Project supervised\n\nLocation(s):\nRA 4231: https://ww
+ w.utwente.nl/en/cfm/study/lectures/overview/#ravelijn\nRA 4334: https://
+ www.utwente.nl/en/cfm/study/lectures/overview/#ravelijn\n\nStaff member(
+ s): GJ Heijenk\, R Langerak\, S Bayhan\n\nStudent set(s): MI MOD10 Cyber
+  Physical Systems Group 01\, MI MOD10 Cyber Physical Systems Group 02\n\
+ nThis appointment is managed by MyTimetable.\n\nLast synchronised on 202
+ 3-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231205T134500
+DTEND;TZID=Europe/Brussels:20231205T163000
+SUMMARY:Cooperative Autonomous Driving 202300111
+LOCATION:TL 2275
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!1469F2F960DF7C36887A02503724C4A5-2023-W49-1@rooster.utwente.nl
+DESCRIPTION:Type: Tutorial\n\nLocation(s):\nTL 2275: https://www.utwente.
+ nl/en/cfm/study/lectures/overview/#technohal\n\nStaff member(s): GJ Heij
+ enk\n\nStudent set(s): MI MOD10 Cyber Physical Systems Group 01\, MI MOD
+ 10 Cyber Physical Systems Group 02\n\nThis appointment is managed by MyT
+ imetable.\n\nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231206T084500
+DTEND;TZID=Europe/Brussels:20231206T163000
+SUMMARY:Embedded Machine Learning 202300111
+LOCATION:CR 3G
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!3F8D5FDA6BA132E7B8656403089F4D38-2023-W49-1@rooster.utwente.nl
+DESCRIPTION:Type: Practical\n\nLocation(s):\nCR 3G: https://www.utwente.n
+ l/en/cfm/study/lectures/overview/#carr%C3%A9-hal-b-waaier\n\nStaff membe
+ r(s): DV Le Viet Duc\, PJM Havinga\n\nStudent set(s): MI MOD10 Cyber Phy
+ sical Systems Group 02\n\nThis appointment is managed by MyTimetable.\n\
+ nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231207T134500
+DTEND;TZID=Europe/Brussels:20231207T173000
+SUMMARY:Embedded Machine Learning 202300111
+LOCATION:CR 2N
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!B3FAA1F0345244A55BC0C1E69E2DAE6F-2023-W49-1@rooster.utwente.nl
+DESCRIPTION:Type: Tutorial\n\nLocation(s):\nCR 2N: https://www.utwente.nl
+ /en/cfm/study/lectures/overview/#carr%C3%A9-hal-b-waaier\n\nStaff member
+ (s): DV Le Viet Duc\, PJM Havinga\n\nStudent set(s): MI MOD10 Cyber Phys
+ ical Systems Group 02\n\nThis appointment is managed by MyTimetable.\n\n
+ Last synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231208T084500
+DTEND;TZID=Europe/Brussels:20231208T103000
+SUMMARY:Wireless Communications & Networking 202300111
+LOCATION:HR N109
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!5A95D691DF8BFA6A06F0A9E5B7FF3337-2023-W49-1@rooster.utwente.nl
+DESCRIPTION:Type: Lecture\n\nLocation(s):\nHR N109: https://www.utwente.n
+ l/en/cfm/study/lectures/overview/#horst\n\nStaff member(s): S Bayhan\n\n
+ Student set(s): MI MOD10 Cyber Physical Systems Group 01\, MI MOD10 Cybe
+ r Physical Systems Group 02\n\nThis appointment is managed by MyTimetabl
+ e.\n\nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231211T084500
+DTEND;TZID=Europe/Brussels:20231211T153000
+SUMMARY:Formal Specification and Hybrid Systems 202300111
+LOCATION:HB 2D
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!F75BDBD718C5A54BAA15025F9F0A3BCF-2023-W50-1@rooster.utwente.nl
+DESCRIPTION:Type: Tutorial\n\nLocation(s):\nHB 2D: https://www.utwente.nl
+ /en/cfm/study/lectures/overview/#carr%C3%A9-hal-b-waaier\n\nStaff member
+ (s): R Langerak\n\nStudent set(s): MI MOD10 Cyber Physical Systems Group
+  01\, MI MOD10 Cyber Physical Systems Group 02\n\nThis appointment is ma
+ naged by MyTimetable.\n\nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231211T154500
+DTEND;TZID=Europe/Brussels:20231211T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!92C66E6C22F1002361F1A6697C2BF5A2-2023-W50-1@rooster.utwente.nl
+DESCRIPTION:Type: Lecture Online\n\nStaff member(s): GJ Heijenk\, R Lange
+ rak\, S Bayhan\n\nStudent set(s): MI MOD10 Cyber Physical Systems Group 
+ 01\, MI MOD10 Cyber Physical Systems Group 02\n\nGuestlectures\n\nThis a
+ ppointment is managed by MyTimetable.\n\nLast synchronised on 2023-12-01
+  at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231212T134500
+DTEND;TZID=Europe/Brussels:20231212T163000
+SUMMARY:Cooperative Autonomous Driving 202300111
+LOCATION:SP 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!1469F2F960DF7C36887A02503724C399-2023-W50-1@rooster.utwente.nl
+DESCRIPTION:Type: Tutorial\n\nLocation(s):\nSP 1: https://www.utwente.nl/
+ en/cfm/study/lectures/overview/#spiegel\n\nStaff member(s): GJ Heijenk\n
+ \nStudent set(s): MI MOD10 Cyber Physical Systems Group 01\, MI MOD10 Cy
+ ber Physical Systems Group 02\n\nThis appointment is managed by MyTimeta
+ ble.\n\nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231213T084500
+DTEND;TZID=Europe/Brussels:20231213T163000
+SUMMARY:Embedded Machine Learning 202300111
+LOCATION:CR 3G
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!3F8D5FDA6BA132E7B8656403089F4D38-2023-W50-1@rooster.utwente.nl
+DESCRIPTION:Type: Practical\n\nLocation(s):\nCR 3G: https://www.utwente.n
+ l/en/cfm/study/lectures/overview/#carr%C3%A9-hal-b-waaier\n\nStaff membe
+ r(s): DV Le Viet Duc\, PJM Havinga\n\nStudent set(s): MI MOD10 Cyber Phy
+ sical Systems Group 02\n\nThis appointment is managed by MyTimetable.\n\
+ nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231214T084500
+DTEND;TZID=Europe/Brussels:20231214T173000
+SUMMARY:Embedded Machine Learning 202300111
+LOCATION:HT 500A\, HT 700B
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!5A95D691DF8BFA6A06F0A9E5B7FF3379-2023-W50-1@rooster.utwente.nl
+DESCRIPTION:Type: Project supervised\n\nLocation(s):\nHT 500A: https://ww
+ w.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 700B: https://www
+ .utwente.nl/en/cfm/study/lectures/overview/#horst\n\nStaff member(s): DV
+  Le Viet Duc\, PJM Havinga\n\nStudent set(s): MI MOD10 Cyber Physical Sy
+ stems Group 02\n\nThis appointment is managed by MyTimetable.\n\nLast sy
+ nchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231215T084500
+DTEND;TZID=Europe/Brussels:20231215T094500
+SUMMARY:Wireless Communications & Networking 202300111
+LOCATION:Therm 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!5A95D691DF8BFA6A06F0A9E5B7FF3348-2023-W50-1@rooster.utwente.nl
+DESCRIPTION:Type: Exam\n\nLocation(s):\nTherm 1: https://www.utwente.nl/e
+ n/cfm/study/lectures/overview/#therm-exams-location\n\nStaff member(s): 
+ S Bayhan\n\nStudent set(s): MI MOD10 Cyber Physical Systems Group 01\, M
+ I MOD10 Cyber Physical Systems Group 02\n\nThis appointment is managed b
+ y MyTimetable.\n\nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231215T104500
+DTEND;TZID=Europe/Brussels:20231215T123000
+SUMMARY:Wireless Communications & Networking 202300111
+LOCATION:HT 900
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!EB3438218117B4C0AC4D664BA2DA14F9-2023-W50-1@rooster.utwente.nl
+DESCRIPTION:Type: Project supervised\n\nLocation(s):\nHT 900: https://www
+ .utwente.nl/en/cfm/study/lectures/overview/#horst\n\nStaff member(s): S 
+ Bayhan\n\nStudent set(s): MI MOD10 Cyber Physical Systems Group 01\, MI 
+ MOD10 Cyber Physical Systems Group 02\n\nThis appointment is managed by 
+ MyTimetable.\n\nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231218T084500
+DTEND;TZID=Europe/Brussels:20231218T153000
+SUMMARY:Formal Specification and Hybrid Systems 202300111
+LOCATION:HB 2D
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!F75BDBD718C5A54BAA15025F9F0A3BCF-2023-W51-1@rooster.utwente.nl
+DESCRIPTION:Type: Tutorial\n\nLocation(s):\nHB 2D: https://www.utwente.nl
+ /en/cfm/study/lectures/overview/#carr%C3%A9-hal-b-waaier\n\nStaff member
+ (s): R Langerak\n\nStudent set(s): MI MOD10 Cyber Physical Systems Group
+  01\, MI MOD10 Cyber Physical Systems Group 02\n\nThis appointment is ma
+ naged by MyTimetable.\n\nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231219T134500
+DTEND;TZID=Europe/Brussels:20231219T163000
+SUMMARY:Cooperative Autonomous Driving 202300111
+LOCATION:OH 211
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!DE7D8C8A9B7E89A11361EFA7442E18C9-2023-W51-1@rooster.utwente.nl
+DESCRIPTION:Type: Tutorial\n\nLocation(s):\nOH 211: https://www.utwente.n
+ l/en/cfm/study/lectures/overview/#horst\n\nStaff member(s): GJ Heijenk\n
+ \nStudent set(s): MI MOD10 Cyber Physical Systems Group 01\, MI MOD10 Cy
+ ber Physical Systems Group 02\n\nThis appointment is managed by MyTimeta
+ ble.\n\nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231220T084500
+DTEND;TZID=Europe/Brussels:20231220T163000
+SUMMARY:Embedded Machine Learning 202300111
+LOCATION:CR 3G
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!3F8D5FDA6BA132E7B8656403089F4D38-2023-W51-1@rooster.utwente.nl
+DESCRIPTION:Type: Practical\n\nLocation(s):\nCR 3G: https://www.utwente.n
+ l/en/cfm/study/lectures/overview/#carr%C3%A9-hal-b-waaier\n\nStaff membe
+ r(s): DV Le Viet Duc\, PJM Havinga\n\nStudent set(s): MI MOD10 Cyber Phy
+ sical Systems Group 02\n\nThis appointment is managed by MyTimetable.\n\
+ nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231221T084500
+DTEND;TZID=Europe/Brussels:20231221T123000
+SUMMARY:Embedded Machine Learning 202300111
+LOCATION:RA 4336\, RA 4334
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!5A95D691DF8BFA6A06F0A9E5B7FF339F-2023-W51-1@rooster.utwente.nl
+DESCRIPTION:Type: Project supervised\n\nLocation(s):\nRA 4334: https://ww
+ w.utwente.nl/en/cfm/study/lectures/overview/#ravelijn\nRA 4336: https://
+ www.utwente.nl/en/cfm/study/lectures/overview/#ravelijn\n\nStaff member(
+ s): DV Le Viet Duc\, PJM Havinga\n\nStudent set(s): MI MOD10 Cyber Physi
+ cal Systems Group 02\n\nThis appointment is managed by MyTimetable.\n\nL
+ ast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20231221T134500
+DTEND;TZID=Europe/Brussels:20231221T173000
+SUMMARY:Embedded Machine Learning 202300111
+LOCATION:RA 4336\, RA 4334
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!5A95D691DF8BFA6A06F0A9E5B7FF33AA-2023-W51-1@rooster.utwente.nl
+DESCRIPTION:Type: Presentation\n\nLocation(s):\nRA 4334: https://www.utwe
+ nte.nl/en/cfm/study/lectures/overview/#ravelijn\nRA 4336: https://www.ut
+ wente.nl/en/cfm/study/lectures/overview/#ravelijn\n\nStaff member(s): DV
+  Le Viet Duc\, PJM Havinga\n\nStudent set(s): MI MOD10 Cyber Physical Sy
+ stems Group 02\n\nDemo\n\nThis appointment is managed by MyTimetable.\n\
+ nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240108T084500
+DTEND;TZID=Europe/Brussels:20240108T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!32160310D7D0F673CB7BE5CFDB1B27E2-2024-W02-1@rooster.utwente.nl
+DESCRIPTION:Type: Project unsupervised\n\nStudent set(s): MI MOD10 Cyber 
+ Physical Systems Group 01\, MI MOD10 Cyber Physical Systems Group 02\n\n
+ This appointment is managed by MyTimetable.\n\nLast synchronised on 2023
+ -12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240108T154500
+DTEND;TZID=Europe/Brussels:20240108T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:RA 4237\, RA 4336\, RA 4334
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!298BC97D36C2D7D3BD348292B1174FA8-2024-W02-1@rooster.utwente.nl
+DESCRIPTION:Type: Project supervised\n\nLocation(s):\nRA 4237: https://ww
+ w.utwente.nl/en/cfm/study/lectures/overview/#ravelijn\nRA 4334: https://
+ www.utwente.nl/en/cfm/study/lectures/overview/#ravelijn\nRA 4336: https:
+ //www.utwente.nl/en/cfm/study/lectures/overview/#ravelijn\n\nStaff membe
+ r(s): GJ Heijenk\, R Langerak\, S Bayhan\n\nStudent set(s): MI MOD10 Cyb
+ er Physical Systems Group 01\, MI MOD10 Cyber Physical Systems Group 02\
+ n\nThis appointment is managed by MyTimetable.\n\nLast synchronised on 2
+ 023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240109T084500
+DTEND;TZID=Europe/Brussels:20240109T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!32160310D7D0F673CB7BE5CFDB1B27E6-2024-W02-1@rooster.utwente.nl
+DESCRIPTION:Type: Project unsupervised\n\nStudent set(s): MI MOD10 Cyber 
+ Physical Systems Group 01\, MI MOD10 Cyber Physical Systems Group 02\n\n
+ This appointment is managed by MyTimetable.\n\nLast synchronised on 2023
+ -12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240109T084500
+DTEND;TZID=Europe/Brussels:20240109T173000
+SUMMARY:Cooperative Autonomous Driving 202300111
+LOCATION:RA 4231
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!9C15A9CA87DB20FA5A9CD8E45CEBC179-2024-W02-1@rooster.utwente.nl
+DESCRIPTION:Type: Presentation\n\nLocation(s):\nRA 4231: https://www.utwe
+ nte.nl/en/cfm/study/lectures/overview/#ravelijn\n\nStaff member(s): GJ H
+ eijenk\n\nStudent set(s): MI MOD10 Cyber Physical Systems Group 01\, MI 
+ MOD10 Cyber Physical Systems Group 02\n\nDemo\n\nThis appointment is man
+ aged by MyTimetable.\n\nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240110T084500
+DTEND;TZID=Europe/Brussels:20240110T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:HT 1007\, HT 1005\, HT 1011\, HT 1009\, HT 1015\, HT 1013\, HT 1
+ 003\, HT 1103\, HT 1001\, HT 1101
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!32160310D7D0F673CB7BE5CFDB1B27EA-2024-W02-1@rooster.utwente.nl
+DESCRIPTION:Type: Project unsupervised\n\nLocation(s):\nHT 1001: https://
+ www.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1003: https://w
+ ww.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1005: https://ww
+ w.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1007: https://www
+ .utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1009: https://www.
+ utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1011: https://www.u
+ twente.nl/en/cfm/study/lectures/overview/#horst\nHT 1013: https://www.ut
+ wente.nl/en/cfm/study/lectures/overview/#horst\nHT 1015: https://www.utw
+ ente.nl/en/cfm/study/lectures/overview/#horst\nHT 1101: https://www.utwe
+ nte.nl/en/cfm/study/lectures/overview/#horst\nHT 1103: https://www.utwen
+ te.nl/en/cfm/study/lectures/overview/#horst\n\nStudent set(s): MI MOD10 
+ Cyber Physical Systems Group 01\, MI MOD10 Cyber Physical Systems Group 
+ 02\n\nThis appointment is managed by MyTimetable.\n\nLast synchronised o
+ n 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240111T084500
+DTEND;TZID=Europe/Brussels:20240111T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:HT 1007\, HT 1005\, HT 1011\, HT 1009\, HT 1015\, HT 1013\, HT 1
+ 003\, HT 1103\, HT 1001\, HT 1101
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!32160310D7D0F673CB7BE5CFDB1B27EC-2024-W02-1@rooster.utwente.nl
+DESCRIPTION:Type: Project unsupervised\n\nLocation(s):\nHT 1001: https://
+ www.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1003: https://w
+ ww.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1005: https://ww
+ w.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1007: https://www
+ .utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1009: https://www.
+ utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1011: https://www.u
+ twente.nl/en/cfm/study/lectures/overview/#horst\nHT 1013: https://www.ut
+ wente.nl/en/cfm/study/lectures/overview/#horst\nHT 1015: https://www.utw
+ ente.nl/en/cfm/study/lectures/overview/#horst\nHT 1101: https://www.utwe
+ nte.nl/en/cfm/study/lectures/overview/#horst\nHT 1103: https://www.utwen
+ te.nl/en/cfm/study/lectures/overview/#horst\n\nStudent set(s): MI MOD10 
+ Cyber Physical Systems Group 01\, MI MOD10 Cyber Physical Systems Group 
+ 02\n\nOnline\n\nThis appointment is managed by MyTimetable.\n\nLast sync
+ hronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240112T084500
+DTEND;TZID=Europe/Brussels:20240112T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:HT 1007\, HT 1005\, HT 1011\, HT 1009\, HT 1015\, HT 1013\, HT 1
+ 003\, HT 1103\, HT 1001\, HT 1101
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!32160310D7D0F673CB7BE5CFDB1B27EE-2024-W02-1@rooster.utwente.nl
+DESCRIPTION:Type: Project unsupervised\n\nLocation(s):\nHT 1001: https://
+ www.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1003: https://w
+ ww.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1005: https://ww
+ w.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1007: https://www
+ .utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1009: https://www.
+ utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1011: https://www.u
+ twente.nl/en/cfm/study/lectures/overview/#horst\nHT 1013: https://www.ut
+ wente.nl/en/cfm/study/lectures/overview/#horst\nHT 1015: https://www.utw
+ ente.nl/en/cfm/study/lectures/overview/#horst\nHT 1101: https://www.utwe
+ nte.nl/en/cfm/study/lectures/overview/#horst\nHT 1103: https://www.utwen
+ te.nl/en/cfm/study/lectures/overview/#horst\n\nStudent set(s): MI MOD10 
+ Cyber Physical Systems Group 01\, MI MOD10 Cyber Physical Systems Group 
+ 02\n\nOnline\n\nThis appointment is managed by MyTimetable.\n\nLast sync
+ hronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240112T094500
+DTEND;TZID=Europe/Brussels:20240112T123000
+SUMMARY:Wireless Communications & Networking 202300111
+LOCATION:SP 3
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!5A95D691DF8BFA6A06F0A9E5B7FF331B-2024-W02-1@rooster.utwente.nl
+DESCRIPTION:Type: Project supervised\n\nLocation(s):\nSP 3: https://www.u
+ twente.nl/en/cfm/study/lectures/overview/#spiegel\n\nStaff member(s): S 
+ Bayhan\n\nStudent set(s): MI MOD10 Cyber Physical Systems Group 01\, MI 
+ MOD10 Cyber Physical Systems Group 02\n\nThis appointment is managed by 
+ MyTimetable.\n\nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240115T084500
+DTEND;TZID=Europe/Brussels:20240115T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:HT 1007\, HT 1005\, HT 1011\, HT 1009\, HT 1015\, HT 1013\, HT 1
+ 003\, HT 1103\, HT 1001\, HT 1101
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!DE7D8C8A9B7E89A11361EFA7442E185B-2024-W03-1@rooster.utwente.nl
+DESCRIPTION:Type: Project unsupervised\n\nLocation(s):\nHT 1001: https://
+ www.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1003: https://w
+ ww.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1005: https://ww
+ w.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1007: https://www
+ .utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1009: https://www.
+ utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1011: https://www.u
+ twente.nl/en/cfm/study/lectures/overview/#horst\nHT 1013: https://www.ut
+ wente.nl/en/cfm/study/lectures/overview/#horst\nHT 1015: https://www.utw
+ ente.nl/en/cfm/study/lectures/overview/#horst\nHT 1101: https://www.utwe
+ nte.nl/en/cfm/study/lectures/overview/#horst\nHT 1103: https://www.utwen
+ te.nl/en/cfm/study/lectures/overview/#horst\n\nStudent set(s): MI MOD10 
+ Cyber Physical Systems Group 01\, MI MOD10 Cyber Physical Systems Group 
+ 02\n\nThis appointment is managed by MyTimetable.\n\nLast synchronised o
+ n 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240115T154500
+DTEND;TZID=Europe/Brussels:20240115T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!92C66E6C22F1002361F1A6697C2BF5A2-2024-W03-1@rooster.utwente.nl
+DESCRIPTION:Type: Lecture Online\n\nStaff member(s): GJ Heijenk\, R Lange
+ rak\, S Bayhan\n\nStudent set(s): MI MOD10 Cyber Physical Systems Group 
+ 01\, MI MOD10 Cyber Physical Systems Group 02\n\nGuestlectures\n\nThis a
+ ppointment is managed by MyTimetable.\n\nLast synchronised on 2023-12-01
+  at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240116T084500
+DTEND;TZID=Europe/Brussels:20240116T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:HT 1007\, HT 1005\, HT 1011\, HT 1009\, HT 1015\, HT 1013\, HT 1
+ 003\, HT 1103\, HT 1001\, HT 1101
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!32160310D7D0F673CB7BE5CFDB1B27FD-2024-W03-1@rooster.utwente.nl
+DESCRIPTION:Type: Project unsupervised\n\nLocation(s):\nHT 1001: https://
+ www.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1003: https://w
+ ww.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1005: https://ww
+ w.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1007: https://www
+ .utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1009: https://www.
+ utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1011: https://www.u
+ twente.nl/en/cfm/study/lectures/overview/#horst\nHT 1013: https://www.ut
+ wente.nl/en/cfm/study/lectures/overview/#horst\nHT 1015: https://www.utw
+ ente.nl/en/cfm/study/lectures/overview/#horst\nHT 1101: https://www.utwe
+ nte.nl/en/cfm/study/lectures/overview/#horst\nHT 1103: https://www.utwen
+ te.nl/en/cfm/study/lectures/overview/#horst\n\nStudent set(s): MI MOD10 
+ Cyber Physical Systems Group 01\, MI MOD10 Cyber Physical Systems Group 
+ 02\n\nThis appointment is managed by MyTimetable.\n\nLast synchronised o
+ n 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240117T084500
+DTEND;TZID=Europe/Brussels:20240117T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:HT 1007\, HT 1005\, HT 1011\, HT 1009\, HT 1015\, HT 1013\, HT 1
+ 003\, HT 1103\, HT 1001\, HT 1101
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!32160310D7D0F673CB7BE5CFDB1B2803-2024-W03-1@rooster.utwente.nl
+DESCRIPTION:Type: Project unsupervised\n\nLocation(s):\nHT 1001: https://
+ www.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1003: https://w
+ ww.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1005: https://ww
+ w.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1007: https://www
+ .utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1009: https://www.
+ utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1011: https://www.u
+ twente.nl/en/cfm/study/lectures/overview/#horst\nHT 1013: https://www.ut
+ wente.nl/en/cfm/study/lectures/overview/#horst\nHT 1015: https://www.utw
+ ente.nl/en/cfm/study/lectures/overview/#horst\nHT 1101: https://www.utwe
+ nte.nl/en/cfm/study/lectures/overview/#horst\nHT 1103: https://www.utwen
+ te.nl/en/cfm/study/lectures/overview/#horst\n\nStudent set(s): MI MOD10 
+ Cyber Physical Systems Group 01\, MI MOD10 Cyber Physical Systems Group 
+ 02\n\nThis appointment is managed by MyTimetable.\n\nLast synchronised o
+ n 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240118T084500
+DTEND;TZID=Europe/Brussels:20240118T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:HT 1007\, HT 1005\, HT 1011\, HT 1009\, HT 1015\, HT 1013\, HT 1
+ 003\, HT 1103\, HT 1001\, HT 1101
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!32160310D7D0F673CB7BE5CFDB1B27EC-2024-W03-1@rooster.utwente.nl
+DESCRIPTION:Type: Project unsupervised\n\nLocation(s):\nHT 1001: https://
+ www.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1003: https://w
+ ww.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1005: https://ww
+ w.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1007: https://www
+ .utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1009: https://www.
+ utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1011: https://www.u
+ twente.nl/en/cfm/study/lectures/overview/#horst\nHT 1013: https://www.ut
+ wente.nl/en/cfm/study/lectures/overview/#horst\nHT 1015: https://www.utw
+ ente.nl/en/cfm/study/lectures/overview/#horst\nHT 1101: https://www.utwe
+ nte.nl/en/cfm/study/lectures/overview/#horst\nHT 1103: https://www.utwen
+ te.nl/en/cfm/study/lectures/overview/#horst\n\nStudent set(s): MI MOD10 
+ Cyber Physical Systems Group 01\, MI MOD10 Cyber Physical Systems Group 
+ 02\n\nOnline\n\nThis appointment is managed by MyTimetable.\n\nLast sync
+ hronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240119T084500
+DTEND;TZID=Europe/Brussels:20240119T093000
+SUMMARY:Wireless Communications & Networking 202300111
+LOCATION:CR 2G
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!5A95D691DF8BFA6A06F0A9E5B7FF3356-2024-W03-1@rooster.utwente.nl
+DESCRIPTION:Type: Other\n\nLocation(s):\nCR 2G: https://www.utwente.nl/en
+ /cfm/study/lectures/overview/#carr%C3%A9-hal-b-waaier\n\nStaff member(s)
+ : S Bayhan\n\nStudent set(s): MI MOD10 Cyber Physical Systems Group 01\,
+  MI MOD10 Cyber Physical Systems Group 02\n\nExam review\n\nEquipment: C
+ hromebookkar Carré 1\n\nThis appointment is managed by MyTimetable.\n\nL
+ ast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240119T084500
+DTEND;TZID=Europe/Brussels:20240119T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:HT 1007\, HT 1005\, HT 1011\, HT 1009\, HT 1015\, HT 1013\, HT 1
+ 003\, HT 1103\, HT 1001\, HT 1101
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!32160310D7D0F673CB7BE5CFDB1B27EE-2024-W03-1@rooster.utwente.nl
+DESCRIPTION:Type: Project unsupervised\n\nLocation(s):\nHT 1001: https://
+ www.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1003: https://w
+ ww.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1005: https://ww
+ w.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1007: https://www
+ .utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1009: https://www.
+ utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1011: https://www.u
+ twente.nl/en/cfm/study/lectures/overview/#horst\nHT 1013: https://www.ut
+ wente.nl/en/cfm/study/lectures/overview/#horst\nHT 1015: https://www.utw
+ ente.nl/en/cfm/study/lectures/overview/#horst\nHT 1101: https://www.utwe
+ nte.nl/en/cfm/study/lectures/overview/#horst\nHT 1103: https://www.utwen
+ te.nl/en/cfm/study/lectures/overview/#horst\n\nStudent set(s): MI MOD10 
+ Cyber Physical Systems Group 01\, MI MOD10 Cyber Physical Systems Group 
+ 02\n\nOnline\n\nThis appointment is managed by MyTimetable.\n\nLast sync
+ hronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240122T084500
+DTEND;TZID=Europe/Brussels:20240122T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:HT 1007\, HT 1005\, HT 1011\, HT 1009\, HT 1015\, HT 1013\, HT 1
+ 003\, HT 1103\, HT 1001\, HT 1101
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!DE7D8C8A9B7E89A11361EFA7442E185B-2024-W04-1@rooster.utwente.nl
+DESCRIPTION:Type: Project unsupervised\n\nLocation(s):\nHT 1001: https://
+ www.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1003: https://w
+ ww.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1005: https://ww
+ w.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1007: https://www
+ .utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1009: https://www.
+ utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1011: https://www.u
+ twente.nl/en/cfm/study/lectures/overview/#horst\nHT 1013: https://www.ut
+ wente.nl/en/cfm/study/lectures/overview/#horst\nHT 1015: https://www.utw
+ ente.nl/en/cfm/study/lectures/overview/#horst\nHT 1101: https://www.utwe
+ nte.nl/en/cfm/study/lectures/overview/#horst\nHT 1103: https://www.utwen
+ te.nl/en/cfm/study/lectures/overview/#horst\n\nStudent set(s): MI MOD10 
+ Cyber Physical Systems Group 01\, MI MOD10 Cyber Physical Systems Group 
+ 02\n\nThis appointment is managed by MyTimetable.\n\nLast synchronised o
+ n 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240122T154500
+DTEND;TZID=Europe/Brussels:20240122T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:RA 4237\, RA 4336\, RA 4334
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!298BC97D36C2D7D3BD348292B1174FB0-2024-W04-1@rooster.utwente.nl
+DESCRIPTION:Type: Project supervised\n\nLocation(s):\nRA 4237: https://ww
+ w.utwente.nl/en/cfm/study/lectures/overview/#ravelijn\nRA 4334: https://
+ www.utwente.nl/en/cfm/study/lectures/overview/#ravelijn\nRA 4336: https:
+ //www.utwente.nl/en/cfm/study/lectures/overview/#ravelijn\n\nStaff membe
+ r(s): GJ Heijenk\, R Langerak\, S Bayhan\n\nStudent set(s): MI MOD10 Cyb
+ er Physical Systems Group 01\, MI MOD10 Cyber Physical Systems Group 02\
+ n\nThis appointment is managed by MyTimetable.\n\nLast synchronised on 2
+ 023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240123T084500
+DTEND;TZID=Europe/Brussels:20240123T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:HT 1007\, HT 1005\, HT 1011\, HT 1009\, HT 1015\, HT 1013\, HT 1
+ 003\, HT 1103\, HT 1001\, HT 1101
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!32160310D7D0F673CB7BE5CFDB1B27FD-2024-W04-1@rooster.utwente.nl
+DESCRIPTION:Type: Project unsupervised\n\nLocation(s):\nHT 1001: https://
+ www.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1003: https://w
+ ww.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1005: https://ww
+ w.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1007: https://www
+ .utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1009: https://www.
+ utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1011: https://www.u
+ twente.nl/en/cfm/study/lectures/overview/#horst\nHT 1013: https://www.ut
+ wente.nl/en/cfm/study/lectures/overview/#horst\nHT 1015: https://www.utw
+ ente.nl/en/cfm/study/lectures/overview/#horst\nHT 1101: https://www.utwe
+ nte.nl/en/cfm/study/lectures/overview/#horst\nHT 1103: https://www.utwen
+ te.nl/en/cfm/study/lectures/overview/#horst\n\nStudent set(s): MI MOD10 
+ Cyber Physical Systems Group 01\, MI MOD10 Cyber Physical Systems Group 
+ 02\n\nThis appointment is managed by MyTimetable.\n\nLast synchronised o
+ n 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240124T084500
+DTEND;TZID=Europe/Brussels:20240124T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:HT 1007\, HT 1005\, HT 1011\, HT 1009\, HT 1015\, HT 1013\, HT 1
+ 003\, HT 1103\, HT 1001\, HT 1101
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!32160310D7D0F673CB7BE5CFDB1B2803-2024-W04-1@rooster.utwente.nl
+DESCRIPTION:Type: Project unsupervised\n\nLocation(s):\nHT 1001: https://
+ www.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1003: https://w
+ ww.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1005: https://ww
+ w.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1007: https://www
+ .utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1009: https://www.
+ utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1011: https://www.u
+ twente.nl/en/cfm/study/lectures/overview/#horst\nHT 1013: https://www.ut
+ wente.nl/en/cfm/study/lectures/overview/#horst\nHT 1015: https://www.utw
+ ente.nl/en/cfm/study/lectures/overview/#horst\nHT 1101: https://www.utwe
+ nte.nl/en/cfm/study/lectures/overview/#horst\nHT 1103: https://www.utwen
+ te.nl/en/cfm/study/lectures/overview/#horst\n\nStudent set(s): MI MOD10 
+ Cyber Physical Systems Group 01\, MI MOD10 Cyber Physical Systems Group 
+ 02\n\nThis appointment is managed by MyTimetable.\n\nLast synchronised o
+ n 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240125T084500
+DTEND;TZID=Europe/Brussels:20240125T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:HT 1007\, HT 1005\, HT 1011\, HT 1009\, HT 1015\, HT 1013\, HT 1
+ 003\, HT 1103\, HT 1001\, HT 1101
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!32160310D7D0F673CB7BE5CFDB1B27EC-2024-W04-1@rooster.utwente.nl
+DESCRIPTION:Type: Project unsupervised\n\nLocation(s):\nHT 1001: https://
+ www.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1003: https://w
+ ww.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1005: https://ww
+ w.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1007: https://www
+ .utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1009: https://www.
+ utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1011: https://www.u
+ twente.nl/en/cfm/study/lectures/overview/#horst\nHT 1013: https://www.ut
+ wente.nl/en/cfm/study/lectures/overview/#horst\nHT 1015: https://www.utw
+ ente.nl/en/cfm/study/lectures/overview/#horst\nHT 1101: https://www.utwe
+ nte.nl/en/cfm/study/lectures/overview/#horst\nHT 1103: https://www.utwen
+ te.nl/en/cfm/study/lectures/overview/#horst\n\nStudent set(s): MI MOD10 
+ Cyber Physical Systems Group 01\, MI MOD10 Cyber Physical Systems Group 
+ 02\n\nOnline\n\nThis appointment is managed by MyTimetable.\n\nLast sync
+ hronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240126T084500
+DTEND;TZID=Europe/Brussels:20240126T094500
+SUMMARY:Wireless Communications & Networking 202300111
+LOCATION:NH 207
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!5A95D691DF8BFA6A06F0A9E5B7FF334E-2024-W04-1@rooster.utwente.nl
+DESCRIPTION:Type: Exam\n\nLocation(s):\nNH 207: https://www.utwente.nl/en
+ /cfm/study/lectures/overview/#horst\n\nStaff member(s): S Bayhan\n\nStud
+ ent set(s): MI MOD10 Cyber Physical Systems Group 01\, MI MOD10 Cyber Ph
+ ysical Systems Group 02\n\nResit\n\nThis appointment is managed by MyTim
+ etable.\n\nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240126T084500
+DTEND;TZID=Europe/Brussels:20240126T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:HT 1007\, HT 1005\, HT 1011\, HT 1009\, HT 1015\, HT 1013\, HT 1
+ 003\, HT 1103\, HT 1001\, HT 1101
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!32160310D7D0F673CB7BE5CFDB1B27EE-2024-W04-1@rooster.utwente.nl
+DESCRIPTION:Type: Project unsupervised\n\nLocation(s):\nHT 1001: https://
+ www.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1003: https://w
+ ww.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1005: https://ww
+ w.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1007: https://www
+ .utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1009: https://www.
+ utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1011: https://www.u
+ twente.nl/en/cfm/study/lectures/overview/#horst\nHT 1013: https://www.ut
+ wente.nl/en/cfm/study/lectures/overview/#horst\nHT 1015: https://www.utw
+ ente.nl/en/cfm/study/lectures/overview/#horst\nHT 1101: https://www.utwe
+ nte.nl/en/cfm/study/lectures/overview/#horst\nHT 1103: https://www.utwen
+ te.nl/en/cfm/study/lectures/overview/#horst\n\nStudent set(s): MI MOD10 
+ Cyber Physical Systems Group 01\, MI MOD10 Cyber Physical Systems Group 
+ 02\n\nOnline\n\nThis appointment is managed by MyTimetable.\n\nLast sync
+ hronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240129T084500
+DTEND;TZID=Europe/Brussels:20240129T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:HT 1007\, HT 1005\, HT 1011\, HT 1009\, HT 1015\, HT 1013\, HT 1
+ 003\, HT 1103\, HT 1001\, HT 1101
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!DE7D8C8A9B7E89A11361EFA7442E185B-2024-W05-1@rooster.utwente.nl
+DESCRIPTION:Type: Project unsupervised\n\nLocation(s):\nHT 1001: https://
+ www.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1003: https://w
+ ww.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1005: https://ww
+ w.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1007: https://www
+ .utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1009: https://www.
+ utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1011: https://www.u
+ twente.nl/en/cfm/study/lectures/overview/#horst\nHT 1013: https://www.ut
+ wente.nl/en/cfm/study/lectures/overview/#horst\nHT 1015: https://www.utw
+ ente.nl/en/cfm/study/lectures/overview/#horst\nHT 1101: https://www.utwe
+ nte.nl/en/cfm/study/lectures/overview/#horst\nHT 1103: https://www.utwen
+ te.nl/en/cfm/study/lectures/overview/#horst\n\nStudent set(s): MI MOD10 
+ Cyber Physical Systems Group 01\, MI MOD10 Cyber Physical Systems Group 
+ 02\n\nThis appointment is managed by MyTimetable.\n\nLast synchronised o
+ n 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240130T084500
+DTEND;TZID=Europe/Brussels:20240130T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:HT 1007\, HT 1005\, HT 1011\, HT 1009\, HT 1015\, HT 1013\, HT 1
+ 003\, HT 1103\, HT 1001\, HT 1101
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!32160310D7D0F673CB7BE5CFDB1B27FD-2024-W05-1@rooster.utwente.nl
+DESCRIPTION:Type: Project unsupervised\n\nLocation(s):\nHT 1001: https://
+ www.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1003: https://w
+ ww.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1005: https://ww
+ w.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1007: https://www
+ .utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1009: https://www.
+ utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1011: https://www.u
+ twente.nl/en/cfm/study/lectures/overview/#horst\nHT 1013: https://www.ut
+ wente.nl/en/cfm/study/lectures/overview/#horst\nHT 1015: https://www.utw
+ ente.nl/en/cfm/study/lectures/overview/#horst\nHT 1101: https://www.utwe
+ nte.nl/en/cfm/study/lectures/overview/#horst\nHT 1103: https://www.utwen
+ te.nl/en/cfm/study/lectures/overview/#horst\n\nStudent set(s): MI MOD10 
+ Cyber Physical Systems Group 01\, MI MOD10 Cyber Physical Systems Group 
+ 02\n\nThis appointment is managed by MyTimetable.\n\nLast synchronised o
+ n 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240131T084500
+DTEND;TZID=Europe/Brussels:20240131T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:HT 1007\, HT 1005\, HT 1011\, HT 1009\, HT 1015\, HT 1013\, HT 1
+ 003\, HT 1103\, HT 1001\, HT 1101
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!32160310D7D0F673CB7BE5CFDB1B2803-2024-W05-1@rooster.utwente.nl
+DESCRIPTION:Type: Project unsupervised\n\nLocation(s):\nHT 1001: https://
+ www.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1003: https://w
+ ww.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1005: https://ww
+ w.utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1007: https://www
+ .utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1009: https://www.
+ utwente.nl/en/cfm/study/lectures/overview/#horst\nHT 1011: https://www.u
+ twente.nl/en/cfm/study/lectures/overview/#horst\nHT 1013: https://www.ut
+ wente.nl/en/cfm/study/lectures/overview/#horst\nHT 1015: https://www.utw
+ ente.nl/en/cfm/study/lectures/overview/#horst\nHT 1101: https://www.utwe
+ nte.nl/en/cfm/study/lectures/overview/#horst\nHT 1103: https://www.utwen
+ te.nl/en/cfm/study/lectures/overview/#horst\n\nStudent set(s): MI MOD10 
+ Cyber Physical Systems Group 01\, MI MOD10 Cyber Physical Systems Group 
+ 02\n\nThis appointment is managed by MyTimetable.\n\nLast synchronised o
+ n 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240201T084500
+DTEND;TZID=Europe/Brussels:20240201T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!32160310D7D0F673CB7BE5CFDB1B2811-2024-W05-1@rooster.utwente.nl
+DESCRIPTION:Type: Project unsupervised\n\nStudent set(s): MI MOD10 Cyber 
+ Physical Systems Group 01\, MI MOD10 Cyber Physical Systems Group 02\n\n
+ This appointment is managed by MyTimetable.\n\nLast synchronised on 2023
+ -12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240202T084500
+DTEND;TZID=Europe/Brussels:20240202T173000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!3F8D5FDA6BA132E7B8656403089F4D8E-2024-W05-1@rooster.utwente.nl
+DESCRIPTION:Type: Project unsupervised\n\nStudent set(s): MI MOD10 Cyber 
+ Physical Systems Group 01\, MI MOD10 Cyber Physical Systems Group 02\n\n
+ This appointment is managed by MyTimetable.\n\nLast synchronised on 2023
+ -12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20231201T114001Z
+DTSTART;TZID=Europe/Brussels:20240202T094500
+DTEND;TZID=Europe/Brussels:20240202T123000
+SUMMARY:Cyber Physical Systems Project 202300111
+LOCATION:TL 3130
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20231201T114001Z
+LAST-MODIFIED:20231201T114001Z
+UID:2023!5A95D691DF8BFA6A06F0A9E5B7FF330E-2024-W05-1@rooster.utwente.nl
+DESCRIPTION:Type: Presentation\n\nLocation(s):\nTL 3130: https://www.utwe
+ nte.nl/en/cfm/study/lectures/overview/#technohal\n\nStaff member(s): S B
+ ayhan\n\nStudent set(s): MI MOD10 Cyber Physical Systems Group 01\, MI M
+ OD10 Cyber Physical Systems Group 02\n\nPitches\n\nThis appointment is m
+ anaged by MyTimetable.\n\nLast synchronised on 2023-12-01 at 12:40 CET
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

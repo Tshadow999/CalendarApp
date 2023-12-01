@@ -12,6 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_n17xt")
 script = ExtResource("1_1aahp")
+iCalFilePath = "res://ICS Files/utwenteRooster.ics"
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
@@ -20,3 +21,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MonthCalendar" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_bottom = 540
+
+[node name="Control" type="Control" parent="MonthCalendar"]
+layout_mode = 2
