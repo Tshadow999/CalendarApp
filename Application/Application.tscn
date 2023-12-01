@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bylio6enjsoid"]
+
+[ext_resource type="Script" path="res://Application/Application.cs" id="1_1aahp"]
+[ext_resource type="Theme" uid="uid://d3spok86bx8v0" path="res://Shared/DefaultTheme.tres" id="1_n17xt"]
+
+[node name="Application" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_n17xt")
+script = ExtResource("1_1aahp")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
