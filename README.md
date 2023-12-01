@@ -4,7 +4,7 @@ An all purpose calendar application. Which, when finished, will bring me and you
 
 ## Functionalities (When finished)
 
--[] Month and week views of all dates;
+-[x] Month and week views of all dates;
 -[] Read and display ICS files in the calendar view;
 -[] Add/Edit events;
 -[] Reminders / notifications of events;
