@@ -1,3 +1,7 @@
-[gd_resource type="Theme" format=3 uid="uid://d3spok86bx8v0"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://d3spok86bx8v0"]
+
+[ext_resource type="FontFile" uid="uid://dxlw454jas06" path="res://Shared/Fonts/NunitoSans.ttf" id="1_fopec"]
 
 [resource]
+default_font = ExtResource("1_fopec")
+default_font_size = 24

@@ -12,6 +12,6 @@ public struct DateEvent
 
     public override string ToString()
     {
-        return $"{Name}\n{Description}\nLocation:{Location}\nStart:{StartDate}\nEnd:{EndDate}\n";
+        return $"{Name}\n{Description}\nLocation:{Location}\nFrom:{StartDate}\nUntil:{EndDate}\n";
     }
 }

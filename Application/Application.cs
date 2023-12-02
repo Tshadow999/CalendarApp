@@ -38,6 +38,8 @@ public partial class Application : Control
 				previousLineWasLocation = false;
 				if (checkNextLine && line.StartsWith(' '))
 				{
+					// The first character is always a space, so we take the line from the second character
+					// Also remove the backslashes '\' which are there
 					currentEvent.Location += line.Replace("\\", "")[1..];
 					checkNextLine = false;
 				}
@@ -61,18 +63,22 @@ public partial class Application : Control
 			}
 			else if (line.Contains("LOCATION"))
 			{
+				// template: 'LOCATION:some_location\, some_other_location\, etc'
 				string location = line.Split(":")[1];
 				location = location.Replace("\\", "");
+				// Location can be empty, so just say Unknown
 				currentEvent.Location = location.Length == 0 ? "Unknown" : location;
 				checkNextLine = true;
 				previousLineWasLocation = true;
 			}
 			else if (line.Contains("SUMMARY"))
 			{
+				// template: 'SUMMARY:some_data'
 				currentEvent.Name = line.Split(":")[1];
 			}
 			else if (line.Contains("DESCRIPTION"))
 			{
+				// template: 'DESCRIPTION:type: some_date\n\n_some_more_data\n\n_etc'
 				string s = line.Split(": ")[1].Split("\\")[0];
 				currentEvent.Description = s;
 			}
