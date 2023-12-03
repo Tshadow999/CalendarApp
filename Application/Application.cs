@@ -16,8 +16,6 @@ public partial class Application : Control
 
 	public override void _Ready()
 	{
-		Debugger.IsDebugging = true;
-
 		_dateEvents = new List<DateEvent>();
 		
 		ReadFile(iCalFilePath);
@@ -51,7 +49,7 @@ public partial class Application : Control
 			else if (line.Contains("END:VEVENT"))
 			{
 				_dateEvents.Add(currentEvent);
-				if (Debugger.IsDebugging) GD.Print(currentEvent);
+				// if (Debugger.IsDebugging) GD.Print(currentEvent);
 			}
 			else if (line.Contains("DTSTART"))
 			{

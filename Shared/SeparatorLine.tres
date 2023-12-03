@@ -2,4 +2,6 @@
 
 [resource]
 color = Color(0.501961, 0.501961, 0.501961, 1)
-grow_begin = 6.0
+grow_begin = 16.0
+grow_end = 16.0
+vertical = true

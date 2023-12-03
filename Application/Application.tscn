@@ -1,15 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bylio6enjsoid"]
+[gd_scene load_steps=7 format=3 uid="uid://bylio6enjsoid"]
 
 [ext_resource type="Script" path="res://Application/Application.cs" id="1_1aahp"]
 [ext_resource type="Theme" uid="uid://d3spok86bx8v0" path="res://Shared/DefaultTheme.tres" id="1_n17xt"]
+[ext_resource type="PackedScene" uid="uid://ds06ge1v56ggx" path="res://Application/CarouselContainer.tscn" id="3_6s6oi"]
+[ext_resource type="Script" path="res://Application/CalendarMonthContent.cs" id="3_18fpd"]
 [ext_resource type="PackedScene" uid="uid://cdisxdaamrcs6" path="res://Application/MonthDateEntry.tscn" id="3_dd5m8"]
 [ext_resource type="StyleBox" uid="uid://b3qj1pydsijm8" path="res://Shared/SeparatorLine.tres" id="3_t7rya"]
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_swpeb"]
-color = Color(0.501961, 0.501961, 0.501961, 1)
-grow_begin = 6.0
-grow_end = 28.0
-vertical = true
 
 [node name="Application" type="Control"]
 layout_mode = 3
@@ -40,15 +36,21 @@ grow_vertical = 2
 theme_override_constants/margin_top = 120
 theme_override_constants/margin_bottom = 540
 
-[node name="Content" type="VBoxContainer" parent="MonthCalendar"]
+[node name="Content" type="VBoxContainer" parent="MonthCalendar" node_paths=PackedStringArray("WeekNumberContainer", "CalendarGridContainer")]
+layout_mode = 2
+script = ExtResource("3_18fpd")
+WeekNumberContainer = NodePath("Agenda/WeekNumbers/HBoxContainer/WeekNumbers")
+CalendarGridContainer = NodePath("Agenda/GridContainer")
+
+[node name="CarouselContainer" parent="MonthCalendar/Content" instance=ExtResource("3_6s6oi")]
 layout_mode = 2
 
 [node name="Header" type="VBoxContainer" parent="MonthCalendar/Content"]
 layout_mode = 2
 
-[node name="HSeparator2" type="HSeparator" parent="MonthCalendar/Content/Header"]
+[node name="HSeparatorTop" type="HSeparator" parent="MonthCalendar/Content/Header"]
 layout_mode = 2
-theme_override_styles/separator = ExtResource("3_t7rya")
+theme_override_constants/separation = 25
 
 [node name="MarginContainer" type="MarginContainer" parent="MonthCalendar/Content/Header"]
 layout_mode = 2
@@ -65,7 +67,7 @@ text = "Mon"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-justification_flags = 66
+justification_flags = 162
 uppercase = true
 
 [node name="Weekday2" type="Label" parent="MonthCalendar/Content/Header/MarginContainer/Weekdays"]
@@ -75,7 +77,7 @@ text = "Tue"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-justification_flags = 66
+justification_flags = 162
 uppercase = true
 
 [node name="Weekday3" type="Label" parent="MonthCalendar/Content/Header/MarginContainer/Weekdays"]
@@ -85,7 +87,7 @@ text = "Wed"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-justification_flags = 66
+justification_flags = 162
 uppercase = true
 
 [node name="Weekday4" type="Label" parent="MonthCalendar/Content/Header/MarginContainer/Weekdays"]
@@ -95,7 +97,7 @@ text = "Thu"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-justification_flags = 66
+justification_flags = 162
 uppercase = true
 
 [node name="Weekday5" type="Label" parent="MonthCalendar/Content/Header/MarginContainer/Weekdays"]
@@ -105,7 +107,7 @@ text = "Fri"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-justification_flags = 66
+justification_flags = 162
 uppercase = true
 
 [node name="Weekday6" type="Label" parent="MonthCalendar/Content/Header/MarginContainer/Weekdays"]
@@ -115,7 +117,7 @@ text = "Sat"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-justification_flags = 66
+justification_flags = 162
 uppercase = true
 
 [node name="Weekday7" type="Label" parent="MonthCalendar/Content/Header/MarginContainer/Weekdays"]
@@ -125,190 +127,191 @@ text = "Sun"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-justification_flags = 66
+justification_flags = 162
 uppercase = true
 
-[node name="HSeparator" type="HSeparator" parent="MonthCalendar/Content/Header"]
+[node name="HSeparatorBottom" type="HSeparator" parent="MonthCalendar/Content/Header"]
 layout_mode = 2
-theme_override_styles/separator = ExtResource("3_t7rya")
+theme_override_constants/separation = 25
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MonthCalendar/Content"]
+[node name="Agenda" type="HBoxContainer" parent="MonthCalendar/Content"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="WeekNumbers" type="MarginContainer" parent="MonthCalendar/Content/HBoxContainer"]
+[node name="WeekNumbers" type="MarginContainer" parent="MonthCalendar/Content/Agenda"]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MonthCalendar/Content/HBoxContainer/WeekNumbers"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MonthCalendar/Content/Agenda/WeekNumbers"]
 layout_mode = 2
 
-[node name="WeekNumbers" type="VBoxContainer" parent="MonthCalendar/Content/HBoxContainer/WeekNumbers/HBoxContainer"]
+[node name="WeekNumbers" type="VBoxContainer" parent="MonthCalendar/Content/Agenda/WeekNumbers/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 98
 
-[node name="WeekNumber1" type="Label" parent="MonthCalendar/Content/HBoxContainer/WeekNumbers/HBoxContainer/WeekNumbers"]
+[node name="WeekNumber1" type="Label" parent="MonthCalendar/Content/Agenda/WeekNumbers/HBoxContainer/WeekNumbers"]
 layout_mode = 2
 text = "46"
 
-[node name="WeekNumber2" type="Label" parent="MonthCalendar/Content/HBoxContainer/WeekNumbers/HBoxContainer/WeekNumbers"]
+[node name="WeekNumber2" type="Label" parent="MonthCalendar/Content/Agenda/WeekNumbers/HBoxContainer/WeekNumbers"]
 layout_mode = 2
 text = "46"
 
-[node name="WeekNumber3" type="Label" parent="MonthCalendar/Content/HBoxContainer/WeekNumbers/HBoxContainer/WeekNumbers"]
+[node name="WeekNumber3" type="Label" parent="MonthCalendar/Content/Agenda/WeekNumbers/HBoxContainer/WeekNumbers"]
 layout_mode = 2
 text = "46"
 
-[node name="WeekNumber4" type="Label" parent="MonthCalendar/Content/HBoxContainer/WeekNumbers/HBoxContainer/WeekNumbers"]
+[node name="WeekNumber4" type="Label" parent="MonthCalendar/Content/Agenda/WeekNumbers/HBoxContainer/WeekNumbers"]
 layout_mode = 2
 text = "46"
 
-[node name="WeekNumber5" type="Label" parent="MonthCalendar/Content/HBoxContainer/WeekNumbers/HBoxContainer/WeekNumbers"]
+[node name="WeekNumber5" type="Label" parent="MonthCalendar/Content/Agenda/WeekNumbers/HBoxContainer/WeekNumbers"]
 layout_mode = 2
 text = "46"
 
-[node name="WeekNumber6" type="Label" parent="MonthCalendar/Content/HBoxContainer/WeekNumbers/HBoxContainer/WeekNumbers"]
+[node name="WeekNumber6" type="Label" parent="MonthCalendar/Content/Agenda/WeekNumbers/HBoxContainer/WeekNumbers"]
 layout_mode = 2
 text = "46"
 
-[node name="VSeparator" type="VSeparator" parent="MonthCalendar/Content/HBoxContainer/WeekNumbers/HBoxContainer"]
+[node name="VSeparator" type="VSeparator" parent="MonthCalendar/Content/Agenda/WeekNumbers/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 15
-theme_override_styles/separator = SubResource("StyleBoxLine_swpeb")
+theme_override_styles/separator = ExtResource("3_t7rya")
 
-[node name="GridContainer" type="GridContainer" parent="MonthCalendar/Content/HBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="MonthCalendar/Content/Agenda"]
 layout_mode = 2
 theme_override_constants/h_separation = 8
 columns = 7
 
-[node name="MonthDateEntry1" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry1" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry2" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry2" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry3" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry3" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry4" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry4" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry5" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry5" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry6" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry6" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry7" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry7" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry8" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry8" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry9" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry9" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry10" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry10" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry11" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry11" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry12" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry12" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry13" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry13" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry14" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry14" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry15" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry15" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry16" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry16" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry17" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry17" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry18" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry18" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry19" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry19" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry20" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry20" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry21" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry21" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry22" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry22" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry23" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry23" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry24" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry24" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry25" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry25" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry26" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry26" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry27" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry27" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry28" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry28" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry29" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry29" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry30" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry30" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry31" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry31" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry32" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry32" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry33" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry33" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry34" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry34" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry35" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry35" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry36" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry36" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry37" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry37" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry38" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry38" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry39" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry39" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry40" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry40" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry41" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry41" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
-[node name="MonthDateEntry42" parent="MonthCalendar/Content/HBoxContainer/GridContainer" instance=ExtResource("3_dd5m8")]
+[node name="MonthDateEntry42" parent="MonthCalendar/Content/Agenda/GridContainer" instance=ExtResource("3_dd5m8")]
 layout_mode = 2
 
 [node name="HSeparator" type="HSeparator" parent="MonthCalendar/Content"]
 layout_mode = 2
-theme_override_constants/separation = 50
-theme_override_styles/separator = ExtResource("3_t7rya")
+theme_override_constants/separation = 25
+
+[connection signal="OnCarouselChanged" from="MonthCalendar/Content/CarouselContainer" to="MonthCalendar/Content" method="OnCarouselChanged_Signal"]

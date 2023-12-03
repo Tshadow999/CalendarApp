@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://ds06ge1v56ggx"]
+
+[ext_resource type="Texture2D" uid="uid://d18uk7v16ko" path="res://Shared/Icons/LeftArrow.png" id="1_or14i"]
+[ext_resource type="Theme" uid="uid://d3spok86bx8v0" path="res://Shared/DefaultTheme.tres" id="1_ymgqa"]
+[ext_resource type="Texture2D" uid="uid://bvsregyf10kr7" path="res://Shared/Icons/RightArrow.png" id="2_06lo4"]
+[ext_resource type="Script" path="res://Application/CarouselContainer.cs" id="2_u3lmp"]
+[ext_resource type="Shader" path="res://Shared/Shaders/WhiteShader.gdshader" id="3_prh25"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hkarh"]
+shader = ExtResource("3_prh25")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rjpgj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yxtki"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ysum2"]
+shader = ExtResource("3_prh25")
+
+[node name="CarouselContainer" type="HBoxContainer" node_paths=PackedStringArray("DisplayText")]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme = ExtResource("1_ymgqa")
+theme_override_constants/separation = 205
+alignment = 1
+script = ExtResource("2_u3lmp")
+DisplayText = NodePath("Label")
+
+[node name="LeftButton" type="Button" parent="."]
+material = SubResource("ShaderMaterial_hkarh")
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rjpgj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yxtki")
+icon = ExtResource("1_or14i")
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "December"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+justification_flags = 162
+
+[node name="RightButton" type="Button" parent="."]
+material = SubResource("ShaderMaterial_ysum2")
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rjpgj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yxtki")
+icon = ExtResource("2_06lo4")
+flat = true
+alignment = 0
+expand_icon = true
+
+[connection signal="pressed" from="LeftButton" to="." method="OnLeftButtonPressed_Signal"]
+[connection signal="pressed" from="RightButton" to="." method="OnRightButtonPressed_Signal"]
