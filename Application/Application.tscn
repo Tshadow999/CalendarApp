@@ -14,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme = ExtResource("1_n17xt")
 script = ExtResource("1_1aahp")
 iCalFilePath = "res://ICS Files/utwenteRooster.ics"
@@ -25,6 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="MonthCalendar" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -38,6 +40,7 @@ theme_override_constants/margin_bottom = 540
 
 [node name="Content" type="VBoxContainer" parent="MonthCalendar" node_paths=PackedStringArray("WeekNumberContainer", "CalendarGridContainer")]
 layout_mode = 2
+mouse_filter = 2
 script = ExtResource("3_18fpd")
 WeekNumberContainer = NodePath("Agenda/WeekNumbers/HBoxContainer/WeekNumbers")
 CalendarGridContainer = NodePath("Agenda/GridContainer")
@@ -136,6 +139,7 @@ theme_override_constants/separation = 25
 
 [node name="Agenda" type="HBoxContainer" parent="MonthCalendar/Content"]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 20
 
 [node name="WeekNumbers" type="MarginContainer" parent="MonthCalendar/Content/Agenda"]
@@ -181,6 +185,7 @@ theme_override_styles/separator = ExtResource("3_t7rya")
 
 [node name="GridContainer" type="GridContainer" parent="MonthCalendar/Content/Agenda"]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/h_separation = 8
 columns = 7
 
@@ -314,4 +319,5 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 25
 
+[connection signal="gui_input" from="MonthCalendar/Content" to="." method="OnContentGuiInput_Signal"]
 [connection signal="OnCarouselChanged" from="MonthCalendar/Content/CarouselContainer" to="MonthCalendar/Content" method="OnCarouselChanged_Signal"]

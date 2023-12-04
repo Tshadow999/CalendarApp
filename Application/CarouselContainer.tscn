@@ -22,7 +22,7 @@ anchor_right = 1.0
 offset_bottom = 23.0
 grow_horizontal = 2
 theme = ExtResource("1_ymgqa")
-theme_override_constants/separation = 205
+theme_override_constants/separation = 150
 alignment = 1
 script = ExtResource("2_u3lmp")
 DisplayText = NodePath("Label")
@@ -39,13 +39,15 @@ alignment = 0
 expand_icon = true
 
 [node name="Label" type="Label" parent="."]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
+theme_type_variation = &"HeaderLarge"
 text = "December"
 horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2
 autowrap_mode = 2
 justification_flags = 162
+uppercase = true
 
 [node name="RightButton" type="Button" parent="."]
 material = SubResource("ShaderMaterial_ysum2")

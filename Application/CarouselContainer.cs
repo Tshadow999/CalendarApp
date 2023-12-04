@@ -16,7 +16,11 @@ public partial class CarouselContainer : HBoxContainer
 		SetDisplayText();
 	}
 
-	private void SetDisplayText() => DisplayText.Text = DateTimeHelper.GetMonthFromIndex(_selectedMonth);
+	private void SetDisplayText()
+	{
+		DisplayText.Text = DateTimeHelper.GetMonthFromIndex(_selectedMonth);
+		if (_selectedYear != DateTime.Today.Year) DisplayText.Text += $" {_selectedYear}";
+	}
 
 	private void HandleButtonPress(int monthChange)
 	{

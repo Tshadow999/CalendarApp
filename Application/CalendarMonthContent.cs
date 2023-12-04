@@ -30,7 +30,6 @@ public partial class CalendarMonthContent : VBoxContainer
 		}
 
 		SetMonthDayNumbers(DateTime.Today.Month, DateTime.Today.Year);
-
 	}
 
 	private void SetMonthDayNumbers(int month, int year)
@@ -42,6 +41,8 @@ public partial class CalendarMonthContent : VBoxContainer
 		
 		int daysFromPreviousMonthToDisplay = (int) startDayOfWeek - 1;
 
+		if (daysFromPreviousMonthToDisplay == -1) daysFromPreviousMonthToDisplay = 6;
+		
 		int startDayNumber = 1;
 		
 		int previousMonthYear = year;
@@ -92,8 +93,6 @@ public partial class CalendarMonthContent : VBoxContainer
 
 	private void OnCarouselChanged_Signal(int month, int year)
 	{
-		//TODO FIXXXX
-		// October this year doesnt work
 		SetMonthDayNumbers(month, year);
 	}
 	

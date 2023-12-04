@@ -5,3 +5,4 @@
 [resource]
 default_font = ExtResource("1_fopec")
 default_font_size = 24
+HeaderLarge/font_sizes/font_size = 35
