@@ -1,10 +1,10 @@
 # CalendarApp
 
-An all purpose calendar application. Which, when finished, will bring me and you joy.
+An all purpose calendar application, with loads of customization.
 
 ## Functionalities (When finished)
 
-- Month and week views of all dates;
+- Month views of all dates; [DONE]
 - Read and display ICS files in the calendar view;
 - Add/Edit events;
 - Reminders / notifications of events;
