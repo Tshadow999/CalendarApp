@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using Godot;
 
 public partial class Application : Control
@@ -94,5 +95,10 @@ public partial class Application : Control
 		if (@event.IsAction(QUIT_KEY)) GetTree().Quit();
 	}
 
-	
+	public List<DateEvent> GetDateEventsOnDay(int day, int month, int year)
+	{
+		DateTime dayInQuestion = new DateTime(year, month, day);
+
+		return _dateEvents.Where(dateEvent => dateEvent.StartDate.Date == dayInQuestion.Date).ToList();
+	}
 }

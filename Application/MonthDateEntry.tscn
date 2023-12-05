@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdisxdaamrcs6"]
+[gd_scene load_steps=5 format=3 uid="uid://cdisxdaamrcs6"]
 
 [ext_resource type="Theme" uid="uid://d3spok86bx8v0" path="res://Shared/DefaultTheme.tres" id="1_hlstl"]
 [ext_resource type="Script" path="res://Application/MonthDateEntry.cs" id="2_lkty8"]
@@ -6,7 +6,14 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgwq8"]
 bg_color = Color(0.137255, 0.137255, 0.137255, 1)
 
-[node name="MonthDateEntry" type="Control" node_paths=PackedStringArray("DayNumberLabel", "Background")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cnfmk"]
+bg_color = Color(0.854902, 0.854902, 0.854902, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="MonthDateEntry" type="Control" node_paths=PackedStringArray("DayNumberLabel", "Background", "SelectedDayBackground", "DayEventContainer")]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 3
 anchors_preset = 0
@@ -16,9 +23,12 @@ mouse_filter = 1
 theme = ExtResource("1_hlstl")
 script = ExtResource("2_lkty8")
 DayNumberLabel = NodePath("DayNumber")
-Background = NodePath("Panel")
+Background = NodePath("Background")
+SelectedDayBackground = NodePath("SelectedDayBackground")
+DayEventContainer = NodePath("BoundingBox/OverFlowProtector/DayEventContainer")
+DayEventScenePath = "res://Application/DayEvent.tscn"
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Background" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,11 +38,47 @@ grow_vertical = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_kgwq8")
 
+[node name="BoundingBox" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.273438
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="OverFlowProtector" type="ScrollContainer" parent="BoundingBox"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="DayEventContainer" type="VBoxContainer" parent="BoundingBox/OverFlowProtector"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="SelectedDayBackground" type="Panel" parent="."]
+visible = false
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -18.0
+offset_right = 18.0
+offset_bottom = 36.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cnfmk")
+
 [node name="DayNumber" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 39.0
+offset_bottom = 34.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "23"
 horizontal_alignment = 1
+vertical_alignment = 1

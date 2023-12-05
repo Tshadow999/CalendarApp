@@ -47,6 +47,7 @@ public partial class CalendarMonthContent : VBoxContainer
 		
 		int previousMonthYear = year;
 		int previousMonth = month - 1;
+		
 		if (previousMonth < 1)
 		{
 			previousMonth = 12;
@@ -63,13 +64,12 @@ public partial class CalendarMonthContent : VBoxContainer
 				// this only runs for days in the previous month
 				int daysInPreviousMonth = DateTime.DaysInMonth(previousMonthYear, previousMonth);
 				dayNumber = daysInPreviousMonth - daysFromPreviousMonthToDisplay + (i % 7) + 1;
-				dateEntry.SetLabelDate(dayNumber, daysInPreviousMonth, previousMonthYear);
+				dateEntry.SetLabelDate(dayNumber, previousMonth, previousMonthYear);
 			}
 			else
 			{
 				// normal incrementing
 				dayNumber = startDayNumber++;
-				dateEntry.SetLabelDate(dayNumber, month, year);
 				
 				// reset the dayNumbers for the next month
 				if (dayNumber > daysInCurrentMonth)
@@ -80,22 +80,18 @@ public partial class CalendarMonthContent : VBoxContainer
 					// if next month is also next year
 					if (month == 12)
 					{
-						dateEntry.SetLabelDate(dayNumber, 1, year + 1);
-					}
-					else
-					{
-						dateEntry.SetLabelDate(dayNumber, month, year);
+						dateEntry.SetLabelDate(dayNumber, 1, ++year);
+						continue;
 					}
 				}
+
+				dateEntry.SetLabelDate(dayNumber, month, year);
 			}
 		}
 	}
 
-	private void OnCarouselChanged_Signal(int month, int year)
-	{
-		SetMonthDayNumbers(month, year);
-	}
-	
+	private void OnCarouselChanged_Signal(int month, int year) => SetMonthDayNumbers(month, year);
+
 
 	private void SetWeekNumberLabelText(int initialWeekNumber)
 	{
