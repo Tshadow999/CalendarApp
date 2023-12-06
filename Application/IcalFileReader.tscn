@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4r08jp3pow5"]
+
+[ext_resource type="Script" path="res://Application/ICalFileReader.cs" id="1_4x3db"]
+
+[node name="IcalFileReader" type="Node"]
+script = ExtResource("1_4x3db")
+ICalDirectory = "res://ICS Files"

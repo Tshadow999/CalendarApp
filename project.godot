@@ -19,6 +19,7 @@ config/icon="res://Shared/icon.svg"
 [autoload]
 
 Debugger="*res://Core/Debugger.cs"
+IcalFileReader="*res://Application/IcalFileReader.tscn"
 
 [display]
 

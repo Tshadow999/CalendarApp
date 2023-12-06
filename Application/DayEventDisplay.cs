@@ -6,24 +6,24 @@ public partial class DayEventDisplay : Control
 	[Export] private Label TimeLabel;
 	[Export] private Label LocationLabel;
 
-	private DateEvent _event;
+	private DateEventData _eventData;
 
 	public override void _Ready()
 	{
-		SetLabelTexts();
+		UpdateLabelTexts();
 	}
 
-	public void SetDateEvent(DateEvent dateEvent)
+	public void SetDateEvent(DateEventData dateEventData)
 	{
-		_event = dateEvent;
-		SetLabelTexts();
+		_eventData = dateEventData;
+		UpdateLabelTexts();
 	}
 
-	private void SetLabelTexts()
+	private void UpdateLabelTexts()
 	{
-		NameLabel.Text = _event.Name;
-		LocationLabel.Text = _event.Location;
-		TimeLabel.Text = $"{_event.StartDate.TimeOfDay} - {_event.EndDate.TimeOfDay}";
+		NameLabel.Text = _eventData.Name;
+		LocationLabel.Text = _eventData.Location;
+		TimeLabel.Text = $"{_eventData.StartDate.TimeOfDay} - {_eventData.EndDate.TimeOfDay}";
 	}
 	
 }

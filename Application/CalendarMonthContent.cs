@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Godot;
 using Godot.Collections;
 
@@ -10,26 +11,71 @@ public partial class CalendarMonthContent : VBoxContainer
 	[Export] private GridContainer CalendarGridContainer;
 	private Array<MonthDateEntry> _monthDateEntries;
 
+	[Export] private VBoxContainer DayEventDisplayer;
+
+	[Export(PropertyHint.File, "*.tscn")] private string DayEventDisplayPath;
+	private PackedScene _dayEventScene;
+	
 	public override void _Ready()
 	{
-		Array<Node> weekNumChildren = WeekNumberContainer.GetChildren();
+		_dayEventScene = ResourceLoader.Load<PackedScene>(DayEventDisplayPath);
+		
+		ClearDayEventDisplay();
+		
+		InitWeekNumbers();
+		InitCalendarGrid();
 
-		_weekNumberLabels = new Array<Label>();
-		
-		foreach (Node child in weekNumChildren)
+		SetMonthDayNumbers(DateTime.Today.Month, DateTime.Today.Year);
+	}
+
+	private void ClearDayEventDisplay()
+	{
+		Array<Node> children = DayEventDisplayer.GetChildren();
+		foreach (Node child in children)
 		{
-			_weekNumberLabels.Add((Label)child);
+			DayEventDisplayer.RemoveChild(child);
+			child.QueueFree();
 		}
-		
+	}
+
+	private void InitCalendarGrid()
+	{
 		Array<Node> gridChildren = CalendarGridContainer.GetChildren();
 
 		_monthDateEntries = new Array<MonthDateEntry>();
 		foreach (Node child in gridChildren)
 		{
-			_monthDateEntries.Add((MonthDateEntry)child);
+			MonthDateEntry entry = (MonthDateEntry)child;
+			_monthDateEntries.Add(entry);
+			entry.OnClick += MonthDateEntryOnClick_Signal;
 		}
+	}
 
-		SetMonthDayNumbers(DateTime.Today.Month, DateTime.Today.Year);
+	private void MonthDateEntryOnClick_Signal(MonthDateEntry dateEntry)
+	{
+		ClearDayEventDisplay();
+
+		List<DateEventData> dateEvents = dateEntry.GetDateEvents();
+		if (dateEvents.Count == 0) return;
+
+		foreach (DateEventData dateEventData in dateEvents)
+		{
+			DayEventDisplay dayEvent = _dayEventScene.Instantiate() as DayEventDisplay;
+			dayEvent.SetDateEvent(dateEventData);
+			DayEventDisplayer.AddChild(dayEvent);
+		}
+	}
+
+	private void InitWeekNumbers()
+	{
+		Array<Node> weekNumChildren = WeekNumberContainer.GetChildren();
+
+		_weekNumberLabels = new Array<Label>();
+
+		foreach (Node child in weekNumChildren)
+		{
+			_weekNumberLabels.Add((Label)child);
+		}
 	}
 
 	private void SetMonthDayNumbers(int month, int year)

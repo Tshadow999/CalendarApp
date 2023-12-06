@@ -3,10 +3,10 @@ using Godot;
 public partial class DayEvent : Control
 {
 	[Export] private ColorRect colorRect;
-	private DateEvent _event;
+	private DateEventData _eventData;
 
-	public DateEvent GetEvent() => _event;
-	public void SetEvent(DateEvent dateEvent) => _event = dateEvent;
+	public DateEventData GetEvent() => _eventData;
+	public void SetEvent(DateEventData dateEventData) => _eventData = dateEventData;
 	public void SetColor(Color color) => colorRect.Color = color;
 	
 }

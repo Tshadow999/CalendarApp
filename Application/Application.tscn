@@ -18,7 +18,6 @@ grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("1_n17xt")
 script = ExtResource("1_1aahp")
-iCalFilePath = "res://ICS Files/utwenteRooster.ics"
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
@@ -39,12 +38,14 @@ grow_vertical = 2
 theme_override_constants/margin_top = 120
 theme_override_constants/margin_bottom = 540
 
-[node name="Content" type="VBoxContainer" parent="MonthCalendar" node_paths=PackedStringArray("WeekNumberContainer", "CalendarGridContainer")]
+[node name="Content" type="VBoxContainer" parent="MonthCalendar" node_paths=PackedStringArray("WeekNumberContainer", "CalendarGridContainer", "DayEventDisplayer")]
 layout_mode = 2
 mouse_filter = 2
 script = ExtResource("3_18fpd")
 WeekNumberContainer = NodePath("AgendaTable/WeekNumbers/HBoxContainer/WeekNumbers")
 CalendarGridContainer = NodePath("AgendaTable/GridContainer")
+DayEventDisplayer = NodePath("DayEvents/Scroller/DayEventDisplayer")
+DayEventDisplayPath = "res://Application/DayEventDisplay.tscn"
 
 [node name="CarouselContainer" parent="MonthCalendar/Content" instance=ExtResource("3_6s6oi")]
 layout_mode = 2

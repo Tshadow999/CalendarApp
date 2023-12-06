@@ -1,8 +1,11 @@
 using System;
+using System.Collections.Generic;
 using Godot;
 
 public partial class MonthDateEntry : Control
 {
+	[Signal] public delegate void OnClickEventHandler(MonthDateEntry dateEntry);
+	
 	[Export] private Label DayNumberLabel;
 	[Export] private Panel Background;
 	[Export] private Panel SelectedDayBackground;
@@ -15,24 +18,22 @@ public partial class MonthDateEntry : Control
 
 	private PackedScene _dayEventScene;
 
+	private List<DateEventData> _dateEvents;
+
 	public override void _Ready()
 	{
 		_dayEventScene = ResourceLoader.Load<PackedScene>(DayEventScenePath);
 
-		for (int i = 0; i < 9; i++)
-		{
-			CreateDayEvent();
-		}
+		_dateEvents = new List<DateEventData>();
 	}
 
-	private void CreateDayEvent()
+	private void CreateDayEvent(DateEventData dateEventData)
 	{
 		DayEvent dayEvent = _dayEventScene.Instantiate() as DayEvent;
 
 		DayEventContainer.AddChild(dayEvent);
-
-		// TODO: GET DATE EVENT FOR THIS DATE!
-		dayEvent.SetEvent(new DateEvent());
+		
+		dayEvent.SetEvent(dateEventData);
 		dayEvent.SetColor(Colors.IndianRed);
 	}
 
@@ -44,6 +45,22 @@ public partial class MonthDateEntry : Control
 		HandleSelectedDay(day, month, year);
 
 		DayNumberLabel.Text = $"{day}";
+		
+		// Remove the old day event children
+		foreach (Node child in DayEventContainer.GetChildren())
+		{
+			DayEventContainer.RemoveChild(child);
+			child.QueueFree();
+		}
+		
+		// Create the new day events
+		_dateEvents.Clear();
+		_dateEvents = ICalFileReader.GetDateEventsOnDay(_day, _month, _year);
+		
+		foreach (DateEventData dateEvent in _dateEvents)
+		{
+			CreateDayEvent(dateEvent);
+		}
 	}
 
 	private void HandleSelectedDay(int day, int month, int year)
@@ -57,8 +74,11 @@ public partial class MonthDateEntry : Control
 	{
 		if(@event is InputEventMouseButton { Pressed: true, ButtonIndex: MouseButton.Left })
 		{
-			//TODO: SHOW today events in the display
-			Background.Modulate = new Color(1, 0, 0);
+			EmitSignal(SignalName.OnClick, this);
+			
+			// TODO: Add border
 		}
 	}
+
+	public List<DateEventData> GetDateEvents() => _dateEvents;
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-public struct DateEvent
+public struct DateEventData
 {
     public string Name;
     public string Description;
