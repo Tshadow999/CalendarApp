@@ -20,12 +20,14 @@ public partial class CalendarMonthContent : VBoxContainer
 	{
 		_dayEventScene = ResourceLoader.Load<PackedScene>(DayEventDisplayPath);
 		
+		// Wait for the file reader to be done.
+		GetNode<ICalFileReader>("/root/IcalFileReader").OnReady += () => 
+			SetMonthDayNumbers(DateTime.Today.Month, DateTime.Today.Year);
+		
 		ClearDayEventDisplay();
 		
 		InitWeekNumbers();
 		InitCalendarGrid();
-
-		SetMonthDayNumbers(DateTime.Today.Month, DateTime.Today.Year);
 	}
 
 	private void ClearDayEventDisplay()
@@ -80,6 +82,7 @@ public partial class CalendarMonthContent : VBoxContainer
 
 	private void SetMonthDayNumbers(int month, int year)
 	{
+		GD.Print("SET MONTH DAY NUMBER ENTRY");
 		int daysInCurrentMonth = DateTime.DaysInMonth(year, month);
 		
 		DateTime firstDayOfMonth = new DateTime(year, month, 1);

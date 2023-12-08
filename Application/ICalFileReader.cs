@@ -8,6 +8,7 @@ using FileAccess = Godot.FileAccess;
 
 public partial class ICalFileReader : Node
 {
+	[Signal] public delegate void OnReadyEventHandler();
 	private const string DATE_TIME_FORMAT = "yyyyMMddTHHmmss";
 	
 	[Export(PropertyHint.Dir, "*ICS*")] private string ICalDirectory;
@@ -17,34 +18,40 @@ public partial class ICalFileReader : Node
 	public override void _Ready()
 	{
 		_dateEvents = new List<DateEventData>();
-
+	}
+	
+	public void ReadICalFiles()
+	{
 		string[] iCalFiles = Directory.GetFiles(ProjectSettings.GlobalizePath(ICalDirectory));
 		
 		foreach (string filePath in iCalFiles)
 		{
-			ReadFile(filePath);
+			string properPath = filePath.Replace("\\", "/");
+			ReadFile(properPath);
 		}
+
+		EmitSignal(SignalName.OnReady);
 	}
 
-	private void ReadFile(string localPathToICSFile)
+	private void ReadFile(string globalPathICalFile)
 	{
-		string[] lines = File.ReadAllLines(ProjectSettings.GlobalizePath(localPathToICSFile));
+		
+		GD.Print("READING FILE");
+		string[] lines = File.ReadAllLines(globalPathICalFile);
+		GD.Print("DONE READING FILE");
 
-		bool checkNextLine = false;
 		bool previousLineWasLocation = false;
 		DateEventData currentEventData = new DateEventData();
-		
 		foreach (string line in lines)
 		{
 			if (previousLineWasLocation)
 			{
 				previousLineWasLocation = false;
-				if (checkNextLine && line.StartsWith(' '))
+				if (line.StartsWith(' '))
 				{
 					// The first character is always a space, so we take the line from the second character
 					// Also remove the backslashes '\' which are there
 					currentEventData.Location += line.Replace("\\", "")[1..];
-					checkNextLine = false;
 				}
 			}
 			else if (line.Contains("BEGIN:VEVENT"))
@@ -71,7 +78,6 @@ public partial class ICalFileReader : Node
 				location = location.Replace("\\", "");
 				// Location can be empty, so just say Unknown
 				currentEventData.Location = location.Length == 0 ? "Unknown" : location;
-				checkNextLine = true;
 				previousLineWasLocation = true;
 			}
 			else if (line.Contains("SUMMARY"))
