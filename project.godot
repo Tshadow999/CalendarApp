@@ -21,6 +21,10 @@ config/icon="res://Shared/icon.svg"
 Debugger="*res://Core/Debugger.cs"
 IcalFileReader="*res://Application/IcalFileReader.tscn"
 
+[debug]
+
+file_logging/enable_file_logging=true
+
 [display]
 
 window/size/viewport_width=1080

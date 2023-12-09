@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" path="res://Application/ICalFileReader.cs" id="1_4x3db"]
 
-[node name="IcalFileReader" type="Node"]
+[node name="IcalFileReader" type="Node" node_paths=PackedStringArray("RequestNode")]
 script = ExtResource("1_4x3db")
-ICalDirectory = "res://ICS Files"
+RequestNode = NodePath("HTTPRequest")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+download_file = "res://ICS Files/utwenteRooster.ics"

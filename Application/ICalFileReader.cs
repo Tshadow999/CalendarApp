@@ -4,38 +4,86 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using FileAccess = Godot.FileAccess;
 
 public partial class ICalFileReader : Node
 {
+	[Export] private HttpRequest RequestNode;
 	[Signal] public delegate void OnReadyEventHandler();
+	
+	private const string utwenteRoosterICalLink =
+		"https://rooster.utwente.nl/ical?6569c5eb&group=true&eu=czI1NTYxNTQ=&h=V5QsZ8N6rV__HKkSVTgWhYTi7Caox_owB_BHwVSbRCM=";
+	
 	private const string DATE_TIME_FORMAT = "yyyyMMddTHHmmss";
 	
-	[Export(PropertyHint.Dir, "*ICS*")] private string ICalDirectory;
+	private const string ICalDirectory = "/ICS Files";
 
 	private static List<DateEventData> _dateEvents;
+	
+	private Label _debugLabel;
 
+	private string _totalPath;
+	
 	public override void _Ready()
 	{
+		_totalPath = $"{OS.GetUserDataDir()}{ICalDirectory}";
+
+		Directory.CreateDirectory(_totalPath);
+		
+		RequestNode.DownloadFile = $"{_totalPath}/rooster.ics";
+		
 		_dateEvents = new List<DateEventData>();
+		// Need to wait a bit before going on.
+		GetTree().CreateTimer(0.15f).Timeout += OnTimeout;
+	}
+
+	private void OnTimeout()
+	{
+		_debugLabel = Debugger.GetLabel();
+		
+		RequestNode.RequestCompleted += OnHttpRequestCompleted;
+		try
+		{
+			RequestNode.Request(utwenteRoosterICalLink);
+		}
+		catch (Exception e)
+		{
+			_debugLabel.Visible = true;
+			_debugLabel.Text = $"[GET]: {e.Message}";
+		}
+	}
+
+	private void OnHttpRequestCompleted(long result, long responsecode, string[] headers, byte[] body)
+	{
+		ReadICalFiles();
 	}
 	
-	public void ReadICalFiles()
+	private void ReadICalFiles()
 	{
-		string[] iCalFiles = Directory.GetFiles(ProjectSettings.GlobalizePath(ICalDirectory));
-		
-		foreach (string filePath in iCalFiles)
+		try
 		{
-			string properPath = filePath.Replace("\\", "/");
-			ReadFile(properPath);
-		}
+			_debugLabel.Text = $"OSPath:{ProjectSettings.GlobalizePath(_totalPath)}\n";			
+			_debugLabel.Text += $"path:{_totalPath}\n";
 
+			string[] iCalFiles = Directory.GetFiles(_totalPath);
+			
+			foreach (string filePath in iCalFiles)
+			{
+				string properPath = filePath.Replace("\\", "/");
+				_debugLabel.Text += $"File:{properPath}\n";
+				ReadFile(properPath);
+			}
+		}
+		catch (Exception e)
+		{
+			_debugLabel.Visible = true;
+			_debugLabel.Text += $"[PATH]: {e.Message}\n";
+		}
+		
 		EmitSignal(SignalName.OnReady);
 	}
 
 	private void ReadFile(string globalPathICalFile)
 	{
-		
 		GD.Print("READING FILE");
 		string[] lines = File.ReadAllLines(globalPathICalFile);
 		GD.Print("DONE READING FILE");

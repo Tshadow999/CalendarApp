@@ -8,7 +8,7 @@
 [ext_resource type="StyleBox" uid="uid://b3qj1pydsijm8" path="res://Shared/SeparatorLine.tres" id="3_t7rya"]
 [ext_resource type="PackedScene" uid="uid://bn8p3bp7qquhb" path="res://Application/DayEventDisplay.tscn" id="7_q4fis"]
 
-[node name="Application" type="Control"]
+[node name="Application" type="Control" node_paths=PackedStringArray("DebugLabel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,6 +18,7 @@ grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("1_n17xt")
 script = ExtResource("1_1aahp")
+DebugLabel = NodePath("MonthCalendar/Content/DEBUGLABEL")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
@@ -36,7 +37,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_top = 120
-theme_override_constants/margin_bottom = 540
 
 [node name="Content" type="VBoxContainer" parent="MonthCalendar" node_paths=PackedStringArray("WeekNumberContainer", "CalendarGridContainer", "DayEventDisplayer")]
 layout_mode = 2
@@ -340,6 +340,13 @@ theme_override_constants/separation = 16
 
 [node name="DayEventDisplay" parent="MonthCalendar/Content/DayEvents/Scroller/DayEventDisplayer" instance=ExtResource("7_q4fis")]
 layout_mode = 2
+
+[node name="DEBUGLABEL" type="Label" parent="MonthCalendar/Content"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+text = "HELLO"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="gui_input" from="MonthCalendar/Content" to="." method="OnContentGuiInput_Signal"]
 [connection signal="OnCarouselChanged" from="MonthCalendar/Content/CarouselContainer" to="MonthCalendar/Content" method="OnCarouselChanged_Signal"]
