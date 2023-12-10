@@ -7,7 +7,7 @@ An all purpose calendar application, with loads of customization.
 - Month views of all dates; [DONE]
 - Read and display ICS files in the calendar view; [DONE]
 - Add/Edit events;
-- Reminders / notifications of events;
+- Reminders/Notifications of events;
 - Customization of the application;
  
 ## Made with Godot 4.2 
