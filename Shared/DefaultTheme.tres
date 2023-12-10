@@ -1,8 +1,18 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://d3spok86bx8v0"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://d3spok86bx8v0"]
 
 [ext_resource type="FontFile" uid="uid://dxlw454jas06" path="res://Shared/Fonts/NunitoSans.ttf" id="1_fopec"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3rbcq"]
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
 
 [resource]
 default_font = ExtResource("1_fopec")
 default_font_size = 24
+HeaderLarge/base_type = &"Panel"
 HeaderLarge/font_sizes/font_size = 35
+SelectedMonthEntry/base_type = &"Panel"
+SelectedMonthEntry/styles/panel = SubResource("StyleBoxFlat_3rbcq")

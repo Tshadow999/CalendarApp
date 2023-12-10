@@ -4,10 +4,13 @@
 [ext_resource type="Script" path="res://Application/DayEvent.cs" id="1_f4w6t"]
 
 [node name="DayEvent" type="Control" node_paths=PackedStringArray("colorRect")]
+custom_minimum_size = Vector2(0, 8)
 layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
 mouse_filter = 1
 theme = ExtResource("1_1g4jd")
 script = ExtResource("1_f4w6t")
@@ -16,7 +19,9 @@ colorRect = NodePath("ColorRect")
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2

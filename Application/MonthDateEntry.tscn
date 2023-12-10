@@ -1,10 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdisxdaamrcs6"]
+[gd_scene load_steps=4 format=3 uid="uid://cdisxdaamrcs6"]
 
 [ext_resource type="Theme" uid="uid://d3spok86bx8v0" path="res://Shared/DefaultTheme.tres" id="1_hlstl"]
 [ext_resource type="Script" path="res://Application/MonthDateEntry.cs" id="2_lkty8"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgwq8"]
-bg_color = Color(0.137255, 0.137255, 0.137255, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cnfmk"]
 bg_color = Color(0.854902, 0.854902, 0.854902, 1)
@@ -36,7 +33,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_kgwq8")
 
 [node name="BoundingBox" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -57,7 +53,7 @@ vertical_scroll_mode = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 15
+theme_override_constants/separation = 8
 
 [node name="SelectedDayBackground" type="Panel" parent="."]
 visible = false
@@ -74,11 +70,12 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_cnfmk")
 
 [node name="DayNumber" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = -1
 anchor_right = 1.0
-offset_bottom = 34.0
+anchor_bottom = 0.266
+offset_bottom = -0.0480003
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "23"
 horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2

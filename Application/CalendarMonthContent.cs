@@ -18,6 +18,8 @@ public partial class CalendarMonthContent : VBoxContainer
 	
 	public override void _Ready()
 	{
+		MonthDateEntry.OnClick += MonthDateEntryOnClick_Signal;
+
 		_dayEventScene = ResourceLoader.Load<PackedScene>(DayEventDisplayPath);
 		
 		// Wait for the file reader to be done.
@@ -49,7 +51,6 @@ public partial class CalendarMonthContent : VBoxContainer
 		{
 			MonthDateEntry entry = (MonthDateEntry)child;
 			_monthDateEntries.Add(entry);
-			entry.OnClick += MonthDateEntryOnClick_Signal;
 		}
 	}
 
@@ -82,7 +83,6 @@ public partial class CalendarMonthContent : VBoxContainer
 
 	private void SetMonthDayNumbers(int month, int year)
 	{
-		GD.Print("SET MONTH DAY NUMBER ENTRY");
 		int daysInCurrentMonth = DateTime.DaysInMonth(year, month);
 		
 		DateTime firstDayOfMonth = new DateTime(year, month, 1);
@@ -102,6 +102,8 @@ public partial class CalendarMonthContent : VBoxContainer
 			previousMonth = 12;
 			previousMonthYear--;
 		}
+		
+		SetWeekNumberLabelText(DateTimeHelper.GetWeekNumberFrom(1, month, year));
 
 		for (int i = 0; i < _monthDateEntries.Count; i++)
 		{
@@ -123,13 +125,16 @@ public partial class CalendarMonthContent : VBoxContainer
 				// reset the dayNumbers for the next month
 				if (dayNumber > daysInCurrentMonth)
 				{
+					GD.Print(month);
 					dayNumber = 1;
 					startDayNumber = 2;
+					month++;
 
 					// if next month is also next year
-					if (month == 12)
+					if (month > 12)
 					{
-						dateEntry.SetLabelDate(dayNumber, 1, ++year);
+						month = 1;
+						dateEntry.SetLabelDate(dayNumber, month, ++year);
 						continue;
 					}
 				}
@@ -146,7 +151,8 @@ public partial class CalendarMonthContent : VBoxContainer
 	{
 		for (int i = 0; i < _weekNumberLabels.Count; i++)
 		{
-			_weekNumberLabels[i].Text = $"{initialWeekNumber + i}";
+			int weekNumber = (initialWeekNumber + i - 1) % 52 + 1;
+			_weekNumberLabels[i].Text = $"{weekNumber:D2}";
 		}
 	}
 }

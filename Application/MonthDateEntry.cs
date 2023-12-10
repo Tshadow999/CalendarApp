@@ -1,10 +1,10 @@
-using System;
 using System.Collections.Generic;
+using System;
 using Godot;
 
 public partial class MonthDateEntry : Control
 {
-	[Signal] public delegate void OnClickEventHandler(MonthDateEntry dateEntry);
+	public static event Action<MonthDateEntry> OnClick;
 	
 	[Export] private Label DayNumberLabel;
 	[Export] private Panel Background;
@@ -16,6 +16,8 @@ public partial class MonthDateEntry : Control
 	private int _month;
 	private int _day;
 
+	private bool _isSelected = false;
+
 	private PackedScene _dayEventScene;
 
 	private List<DateEventData> _dateEvents;
@@ -25,6 +27,14 @@ public partial class MonthDateEntry : Control
 		_dayEventScene = ResourceLoader.Load<PackedScene>(DayEventScenePath);
 
 		_dateEvents = new List<DateEventData>();
+		
+		OnClick += OnClickEntry;
+	}
+
+	private void OnClickEntry(MonthDateEntry dateEntry)
+	{
+		string themeVariant = this == dateEntry ? "SelectedMonthEntry" : "";
+		Background.Set("theme_type_variation", themeVariant);
 	}
 
 	private void CreateDayEvent(DateEventData dateEventData)
@@ -72,11 +82,9 @@ public partial class MonthDateEntry : Control
 
 	public override void _GuiInput(InputEvent @event)
 	{
-		if(@event is InputEventMouseButton { Pressed: true, ButtonIndex: MouseButton.Left })
+		if (@event is InputEventMouseButton { Pressed: true, ButtonIndex: MouseButton.Left })
 		{
-			EmitSignal(SignalName.OnClick, this);
-			
-			// TODO: Add border
+			OnClick?.Invoke(this);
 		}
 	}
 
