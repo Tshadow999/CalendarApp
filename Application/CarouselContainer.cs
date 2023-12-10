@@ -8,7 +8,7 @@ public partial class CarouselContainer : HBoxContainer
 
 	private int _selectedMonth;
 	private int _selectedYear;
-
+	
 	public override void _Ready()
 	{
 		_selectedMonth = DateTime.Today.Month;
@@ -22,7 +22,7 @@ public partial class CarouselContainer : HBoxContainer
 		if (_selectedYear != DateTime.Today.Year) DisplayText.Text += $" {_selectedYear}";
 	}
 
-	private void HandleButtonPress(int monthChange)
+	public void HandleButtonPress(int monthChange)
 	{
 		if (monthChange == 1 && _selectedMonth == 12)
 		{
@@ -42,6 +42,8 @@ public partial class CarouselContainer : HBoxContainer
 		SetDisplayText();
 		EmitSignal(SignalName.OnCarouselChanged, _selectedMonth, _selectedYear);
 	}
+	
+
 	
 	private void OnLeftButtonPressed_Signal() => HandleButtonPress(-1);
 

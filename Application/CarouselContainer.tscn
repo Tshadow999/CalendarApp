@@ -28,6 +28,7 @@ script = ExtResource("2_u3lmp")
 DisplayText = NodePath("Label")
 
 [node name="LeftButton" type="Button" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_hkarh")
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
@@ -50,6 +51,7 @@ justification_flags = 162
 uppercase = true
 
 [node name="RightButton" type="Button" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_ysum2")
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
