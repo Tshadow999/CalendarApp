@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d18uk7v16ko" path="res://Shared/Icons/LeftArrow.png" id="1_or14i"]
 [ext_resource type="Theme" uid="uid://d3spok86bx8v0" path="res://Shared/DefaultTheme.tres" id="1_ymgqa"]
 [ext_resource type="Texture2D" uid="uid://bvsregyf10kr7" path="res://Shared/Icons/RightArrow.png" id="2_06lo4"]
-[ext_resource type="Script" path="res://Application/CarouselContainer.cs" id="2_u3lmp"]
+[ext_resource type="Script" path="res://Application/UI Component/CarouselContainer.cs" id="2_u3lmp"]
 [ext_resource type="Shader" path="res://Shared/Shaders/WhiteShader.gdshader" id="3_prh25"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hkarh"]

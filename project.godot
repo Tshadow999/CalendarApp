@@ -20,6 +20,7 @@ config/icon="res://Shared/icon.svg"
 
 Debugger="*res://Core/Debugger.cs"
 IcalFileReader="*res://Application/IcalFileReader.tscn"
+PopupManager="*res://Application/InfoDisplays/PopupManager.tscn"
 
 [debug]
 

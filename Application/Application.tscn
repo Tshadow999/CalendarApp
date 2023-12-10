@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bylio6enjsoid"]
+[gd_scene load_steps=7 format=3 uid="uid://bylio6enjsoid"]
 
 [ext_resource type="Script" path="res://Application/Application.cs" id="1_1aahp"]
 [ext_resource type="Theme" uid="uid://d3spok86bx8v0" path="res://Shared/DefaultTheme.tres" id="1_n17xt"]
-[ext_resource type="PackedScene" uid="uid://ds06ge1v56ggx" path="res://Application/CarouselContainer.tscn" id="3_6s6oi"]
+[ext_resource type="PackedScene" uid="uid://ds06ge1v56ggx" path="res://Application/UI Component/CarouselContainer.tscn" id="3_6s6oi"]
 [ext_resource type="Script" path="res://Application/CalendarMonthContent.cs" id="3_18fpd"]
-[ext_resource type="PackedScene" uid="uid://cdisxdaamrcs6" path="res://Application/MonthDateEntry.tscn" id="3_dd5m8"]
+[ext_resource type="PackedScene" uid="uid://cdisxdaamrcs6" path="res://Application/InfoDisplays/MonthDateEntry.tscn" id="3_dd5m8"]
 [ext_resource type="StyleBox" uid="uid://b3qj1pydsijm8" path="res://Shared/SeparatorLine.tres" id="3_t7rya"]
-[ext_resource type="PackedScene" uid="uid://bn8p3bp7qquhb" path="res://Application/DayEventDisplay.tscn" id="7_q4fis"]
 
 [node name="Application" type="Control" node_paths=PackedStringArray("DebugLabel", "Carousel")]
 layout_mode = 3
@@ -47,7 +46,7 @@ script = ExtResource("3_18fpd")
 WeekNumberContainer = NodePath("AgendaTable/WeekNumbers/HBoxContainer/WeekNumbers")
 CalendarGridContainer = NodePath("AgendaTable/GridContainer")
 DayEventDisplayer = NodePath("DayEvents/Scroller/DayEventDisplayer")
-DayEventDisplayPath = "res://Application/DayEventDisplay.tscn"
+DayEventDisplayPath = "res://Application/InfoDisplays/DayEventDisplay.tscn"
 
 [node name="CarouselContainer" parent="MonthCalendar/Content" instance=ExtResource("3_6s6oi")]
 layout_mode = 2
@@ -339,9 +338,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 16
-
-[node name="DayEventDisplay" parent="MonthCalendar/Content/DayEvents/Scroller/DayEventDisplayer" instance=ExtResource("7_q4fis")]
-layout_mode = 2
 
 [node name="DEBUGLABEL" type="Label" parent="MonthCalendar/Content"]
 custom_minimum_size = Vector2(0, 150)

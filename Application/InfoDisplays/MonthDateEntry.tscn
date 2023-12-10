@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cdisxdaamrcs6"]
 
 [ext_resource type="Theme" uid="uid://d3spok86bx8v0" path="res://Shared/DefaultTheme.tres" id="1_hlstl"]
-[ext_resource type="Script" path="res://Application/MonthDateEntry.cs" id="2_lkty8"]
+[ext_resource type="Script" path="res://Application/InfoDisplays/MonthDateEntry.cs" id="2_lkty8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cnfmk"]
 bg_color = Color(0.854902, 0.854902, 0.854902, 1)
@@ -23,7 +23,7 @@ DayNumberLabel = NodePath("DayNumber")
 Background = NodePath("Background")
 SelectedDayBackground = NodePath("SelectedDayBackground")
 DayEventContainer = NodePath("BoundingBox/OverFlowProtector/DayEventContainer")
-DayEventScenePath = "res://Application/DayEvent.tscn"
+DayEventScenePath = "res://Application/UI Component/DayEvent.tscn"
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bn8p3bp7qquhb"]
 
-[ext_resource type="Script" path="res://Application/DayEventDisplay.cs" id="1_bps3w"]
+[ext_resource type="Script" path="res://Application/InfoDisplays/DayEventDisplay.cs" id="1_bps3w"]
 
 [node name="DayEventDisplay" type="Control" node_paths=PackedStringArray("NameLabel", "TimeLabel", "LocationLabel")]
 custom_minimum_size = Vector2(0, 120)

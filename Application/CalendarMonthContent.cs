@@ -125,7 +125,6 @@ public partial class CalendarMonthContent : VBoxContainer
 				// reset the dayNumbers for the next month
 				if (dayNumber > daysInCurrentMonth)
 				{
-					GD.Print(month);
 					dayNumber = 1;
 					startDayNumber = 2;
 					month++;
