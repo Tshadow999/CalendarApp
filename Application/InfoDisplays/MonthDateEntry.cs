@@ -7,7 +7,6 @@ public partial class MonthDateEntry : Control
 	public static event Action<MonthDateEntry> OnClick;
 	
 	[Export] private Label DayNumberLabel;
-	[Export] private Panel Background;
 	[Export] private Panel SelectedDayBackground;
 	[Export] private VBoxContainer DayEventContainer;
 	[Export(PropertyHint.File, "*.tscn")] private string DayEventScenePath;
@@ -34,8 +33,10 @@ public partial class MonthDateEntry : Control
 	private void OnClickEntry(MonthDateEntry dateEntry)
 	{
 		string themeVariant = this == dateEntry ? "SelectedMonthEntry" : "";
-		Background.Set("theme_type_variation", themeVariant);
+		Set("theme_type_variation", themeVariant);
 	}
+
+	public void ClearSelection() => Set("theme_type_variation", "");
 
 	private void CreateDayEvent(DateEventData dateEventData)
 	{

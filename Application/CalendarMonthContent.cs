@@ -15,7 +15,8 @@ public partial class CalendarMonthContent : VBoxContainer
 
 	[Export(PropertyHint.File, "*.tscn")] private string DayEventDisplayPath;
 	private PackedScene _dayEventScene;
-	
+
+	private MonthDateEntry _monthDateEntry;
 	public override void _Ready()
 	{
 		MonthDateEntry.OnClick += MonthDateEntryOnClick_Signal;
@@ -56,6 +57,7 @@ public partial class CalendarMonthContent : VBoxContainer
 
 	private void MonthDateEntryOnClick_Signal(MonthDateEntry dateEntry)
 	{
+		_monthDateEntry = dateEntry;
 		ClearDayEventDisplay();
 
 		List<DateEventData> dateEvents = dateEntry.GetDateEvents();
@@ -153,5 +155,11 @@ public partial class CalendarMonthContent : VBoxContainer
 			int weekNumber = (initialWeekNumber + i - 1) % 52 + 1;
 			_weekNumberLabels[i].Text = $"{weekNumber:D2}";
 		}
+	}
+
+	public void HandleSwipe()
+	{
+		ClearDayEventDisplay();
+		_monthDateEntry.ClearSelection();	
 	}
 }
