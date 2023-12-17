@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bylio6enjsoid"]
+[gd_scene load_steps=8 format=3 uid="uid://bylio6enjsoid"]
 
 [ext_resource type="Script" path="res://Application/Application.cs" id="1_1aahp"]
 [ext_resource type="Theme" uid="uid://d3spok86bx8v0" path="res://Shared/DefaultTheme.tres" id="1_n17xt"]
@@ -7,7 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://cdisxdaamrcs6" path="res://Application/InfoDisplays/MonthDateEntry.tscn" id="3_dd5m8"]
 [ext_resource type="StyleBox" uid="uid://b3qj1pydsijm8" path="res://Shared/SeparatorLine.tres" id="3_t7rya"]
 
-[node name="Application" type="PanelContainer" node_paths=PackedStringArray("DebugLabel", "Carousel", "Content")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4xh0a"]
+bg_color = Color(0.109804, 0.109804, 0.109804, 1)
+
+[node name="Application" type="PanelContainer" node_paths=PackedStringArray("DebugLabel", "Carousel", "Content", "PopupContainer")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -19,6 +22,7 @@ script = ExtResource("1_1aahp")
 DebugLabel = NodePath("MonthCalendar/Content/DEBUGLABEL")
 Carousel = NodePath("MonthCalendar/Content/CarouselContainer")
 Content = NodePath("MonthCalendar/Content")
+PopupContainer = NodePath("Popup")
 SwipeThreshold = 350.0
 
 [node name="MonthCalendar" type="MarginContainer" parent="."]
@@ -331,5 +335,13 @@ layout_mode = 2
 text = "HELLO"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Popup" type="PanelContainer" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4xh0a")
+
+[node name="MarginContainer" type="MarginContainer" parent="Popup"]
+layout_mode = 2
+theme_override_constants/margin_top = 120
 
 [connection signal="OnCarouselChanged" from="MonthCalendar/Content/CarouselContainer" to="MonthCalendar/Content" method="OnCarouselChanged_Signal"]

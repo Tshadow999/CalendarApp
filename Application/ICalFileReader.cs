@@ -17,12 +17,37 @@ public partial class ICalFileReader : Node
 	
 	private const string ICalDirectory = "/ICS Files";
 
+	private const string BEGIN = "BEGIN";
+	private const string END = "END";
+	private const string EVENT = "VEVENT";
+	private const string DTSTART = "DTSTART";
+	private const string DTEND = "DTEND";
+	private const string LOCATION = "LOCATION";
+	private const string SUMMARY = "SUMMARY";
+	private const string DESCRIPTION = "DESCRIPTION";
+	
 	private static List<DateEventData> _dateEvents;
 	
 	private Label _debugLabel;
 
 	private string _totalPath;
+
+	private static DateEventData _currentEventData;
+
+	private static bool _previousLineWasLocation;
+		
 	
+	private readonly Dictionary<string, Action<string>> _propertyActionsDict = new Dictionary<string, Action<string>>
+	{
+		{ BEGIN, ParseBegin },
+		{ END, ParseEnd },
+		{ DTSTART, ParseStartDate },
+		{ DTEND, ParseEndDate},
+		{ LOCATION, ParseLocationLine },
+		{ SUMMARY, ParseSummaryLine },
+		{ DESCRIPTION, ParseDescription }
+	};
+
 	public override void _Ready()
 	{
 		_totalPath = $"{OS.GetUserDataDir()}{ICalDirectory}";
@@ -84,63 +109,59 @@ public partial class ICalFileReader : Node
 
 	private void ReadFile(string globalPathICalFile)
 	{
-		GD.Print("READING FILE");
 		string[] lines = File.ReadAllLines(globalPathICalFile);
-		GD.Print("DONE READING FILE");
 
-		bool previousLineWasLocation = false;
-		DateEventData currentEventData = new DateEventData();
 		foreach (string line in lines)
 		{
-			if (previousLineWasLocation)
+			if (_previousLineWasLocation)
 			{
-				previousLineWasLocation = false;
+				// Check if the locations didnt fit on one line. 
+				// This is likely not to happen 
+				_previousLineWasLocation = false;
+				
 				if (line.StartsWith(' '))
 				{
 					// The first character is always a space, so we take the line from the second character
 					// Also remove the backslashes '\' which are there
-					currentEventData.Location += line.Replace("\\", "")[1..];
+					_currentEventData.Location += line.Replace("\\", "")[1..];
 				}
-			}
-			else if (line.Contains("BEGIN:VEVENT"))
+			} 
+			else if (_propertyActionsDict.TryGetValue(line.Split(":")[0].Split(";")[0], out Action<string> action))
 			{
-				currentEventData = new DateEventData();
+				action.Invoke(line);
 			}
-			else if (line.Contains("END:VEVENT"))
-			{
-				_dateEvents.Add(currentEventData);
-				// if (Debugger.IsDebugging) GD.Print(currentEvent);
-			}
-			else if (line.Contains("DTSTART"))
-			{
-				currentEventData.StartDate = ParseICSDateTime(line);
-			}
-			else if (line.Contains("DTEND"))
-			{
-				currentEventData.EndDate = ParseICSDateTime(line);
-			}
-			else if (line.Contains("LOCATION"))
-			{
-				// template: 'LOCATION:some_location\, some_other_location\, etc'
-				string location = line.Split(":")[1];
-				location = location.Replace("\\", "");
-				// Location can be empty, so just say Unknown
-				currentEventData.Location = location.Length == 0 ? "Unknown" : location;
-				previousLineWasLocation = true;
-			}
-			else if (line.Contains("SUMMARY"))
-			{
-				// template: 'SUMMARY:some_data'
-				currentEventData.Name = line.Split(":")[1];
-			}
-			else if (line.Contains("DESCRIPTION"))
-			{
-				// template: 'DESCRIPTION:type: some_date\n\n_some_more_data\n\n_etc'
-				string s = line.Split(": ")[1].Split("\\")[0];
-				currentEventData.Description = s;
-			}
-			// if (Debugger.IsDebugging) GD.Print(line);
 		}
+	}
+	
+	private static void ParseBegin(string line)
+	{
+		if (!line.Contains(EVENT)) return;
+		
+		_currentEventData = new DateEventData();
+	}
+	
+	private static void ParseEnd(string line)
+    {
+    	if (!line.Contains(EVENT)) return;
+    	_dateEvents.Add(_currentEventData);
+	} 
+	
+	private static void ParseEndDate(string line) => _currentEventData.EndDate = ParseICSDateTime(line);
+    
+	private static void ParseStartDate(string line) => _currentEventData.StartDate = ParseICSDateTime(line);
+	    
+	private static void ParseSummaryLine(string line) => _currentEventData.Name = line.Split(":")[1];
+
+	private static void ParseDescription(string line) => _currentEventData.Description = line;
+
+	private static void ParseLocationLine(string line)
+	{
+		// template: 'LOCATION:some_location\, some_other_location\, etc'
+		string location = line.Split(":")[1];
+		location = location.Replace("\\", "");
+		// Location can be empty, so just say Unknown
+		_currentEventData.Location = location.Length == 0 ? "Unknown" : location;
+		_previousLineWasLocation = true;
 	}
 
 	private static DateTime ParseICSDateTime(string line)
