@@ -1,6 +1,7 @@
 [gd_resource type="Theme" load_steps=4 format=3 uid="uid://d3spok86bx8v0"]
 
 [ext_resource type="FontFile" uid="uid://dxlw454jas06" path="res://Shared/Fonts/NunitoSans.ttf" id="1_fopec"]
+[ext_resource type="StyleBox" uid="uid://dd3vytx4ao2x5" path="res://Shared/Themeing/StyleBoxDefaultTheme.tres" id="1_vipqg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3rbcq"]
 bg_color = Color(0.180392, 0.180392, 0.180392, 1)
@@ -13,14 +14,14 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kd64"]
-shadow_size = 500
-
 [resource]
 default_font = ExtResource("1_fopec")
 default_font_size = 24
+CheckButton/styles/focus = ExtResource("1_vipqg")
+CheckButton/styles/normal = ExtResource("1_vipqg")
 HeaderLarge/base_type = &"Panel"
-HeaderLarge/font_sizes/font_size = 35
+HeaderLarge/font_sizes/font_size = 45
+LineEdit/styles/focus = ExtResource("1_vipqg")
+LineEdit/styles/normal = ExtResource("1_vipqg")
 SelectedMonthEntry/base_type = &"Panel"
 SelectedMonthEntry/styles/panel = SubResource("StyleBoxFlat_3rbcq")
-TabContainer/styles/panel = SubResource("StyleBoxFlat_1kd64")

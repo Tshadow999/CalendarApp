@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b1xelpsma5wqp"]
 
-[ext_resource type="Theme" uid="uid://d3spok86bx8v0" path="res://Shared/DefaultTheme.tres" id="1_1g4jd"]
+[ext_resource type="Theme" uid="uid://d3spok86bx8v0" path="res://Shared/Themeing/DefaultTheme.tres" id="1_1g4jd"]
 [ext_resource type="Script" path="res://Application/UI Component/DayEvent.cs" id="1_f4w6t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mrul"]

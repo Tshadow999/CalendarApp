@@ -100,8 +100,9 @@ public partial class ICalFileReader : Node
 		}
 		catch (Exception e)
 		{
-			_debugLabel.Visible = true;
-			_debugLabel.Text += $"[PATH]: {e.Message}\n";
+			// _debugLabel.Visible = true;
+			// _debugLabel.Text += $"[PATH]: {e.Message}\n";
+			GD.Print($"[PATH]: {e.Message}");
 		}
 		
 		EmitSignal(SignalName.OnReady);

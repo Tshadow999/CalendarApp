@@ -160,6 +160,6 @@ public partial class CalendarMonthContent : VBoxContainer
 	public void HandleSwipe()
 	{
 		ClearDayEventDisplay();
-		_monthDateEntry.ClearSelection();	
+		_monthDateEntry?.ClearSelection();	
 	}
 }

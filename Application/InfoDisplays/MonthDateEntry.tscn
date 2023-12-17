@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cdisxdaamrcs6"]
 
-[ext_resource type="Theme" uid="uid://d3spok86bx8v0" path="res://Shared/DefaultTheme.tres" id="1_hlstl"]
+[ext_resource type="Theme" uid="uid://d3spok86bx8v0" path="res://Shared/Themeing/DefaultTheme.tres" id="1_hlstl"]
 [ext_resource type="Script" path="res://Application/InfoDisplays/MonthDateEntry.cs" id="2_lkty8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ne3p1"]

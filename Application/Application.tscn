@@ -1,14 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://bylio6enjsoid"]
 
 [ext_resource type="Script" path="res://Application/Application.cs" id="1_1aahp"]
-[ext_resource type="Theme" uid="uid://d3spok86bx8v0" path="res://Shared/DefaultTheme.tres" id="1_n17xt"]
+[ext_resource type="Theme" uid="uid://d3spok86bx8v0" path="res://Shared/Themeing/DefaultTheme.tres" id="1_n17xt"]
 [ext_resource type="PackedScene" uid="uid://ds06ge1v56ggx" path="res://Application/UI Component/CarouselContainer.tscn" id="3_6s6oi"]
 [ext_resource type="Script" path="res://Application/CalendarMonthContent.cs" id="3_18fpd"]
 [ext_resource type="PackedScene" uid="uid://cdisxdaamrcs6" path="res://Application/InfoDisplays/MonthDateEntry.tscn" id="3_dd5m8"]
-[ext_resource type="StyleBox" uid="uid://b3qj1pydsijm8" path="res://Shared/SeparatorLine.tres" id="3_t7rya"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4xh0a"]
-bg_color = Color(0.109804, 0.109804, 0.109804, 1)
+[ext_resource type="StyleBox" uid="uid://b3qj1pydsijm8" path="res://Shared/Themeing/SeparatorLine.tres" id="3_t7rya"]
+[ext_resource type="PackedScene" uid="uid://jb772kwqwc4w" path="res://Application/InfoDisplays/EditPopup.tscn" id="7_40dvd"]
 
 [node name="Application" type="PanelContainer" node_paths=PackedStringArray("DebugLabel", "Carousel", "Content", "PopupContainer")]
 anchors_preset = 15
@@ -22,7 +20,7 @@ script = ExtResource("1_1aahp")
 DebugLabel = NodePath("MonthCalendar/Content/DEBUGLABEL")
 Carousel = NodePath("MonthCalendar/Content/CarouselContainer")
 Content = NodePath("MonthCalendar/Content")
-PopupContainer = NodePath("Popup")
+PopupContainer = NodePath("EditPopup")
 SwipeThreshold = 350.0
 
 [node name="MonthCalendar" type="MarginContainer" parent="."]
@@ -336,12 +334,8 @@ text = "HELLO"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Popup" type="PanelContainer" parent="."]
+[node name="EditPopup" parent="." instance=ExtResource("7_40dvd")]
+visible = false
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_4xh0a")
-
-[node name="MarginContainer" type="MarginContainer" parent="Popup"]
-layout_mode = 2
-theme_override_constants/margin_top = 120
 
 [connection signal="OnCarouselChanged" from="MonthCalendar/Content/CarouselContainer" to="MonthCalendar/Content" method="OnCarouselChanged_Signal"]
