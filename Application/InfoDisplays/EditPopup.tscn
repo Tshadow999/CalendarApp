@@ -169,15 +169,20 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/separator = ExtResource("3_x2vl5")
 
-[node name="BackButton" type="PanelContainer" parent="MarginContainer"]
+[node name="BackButton" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 8
 
 [node name="BackButton" type="Button" parent="MarginContainer/BackButton"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Back"
-flat = true
+
+[node name="ConfirmButton" type="Button" parent="MarginContainer/BackButton"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Confirm"
 
 [connection signal="text_changed" from="MarginContainer/InfoStructure/EventNameContainer/NameEdit" to="." method="OnTitleEditTextChanged_Signal"]
 [connection signal="text_submitted" from="MarginContainer/InfoStructure/EventNameContainer/NameEdit" to="." method="OnTitleEditTextSubmitted_Signal"]
@@ -185,3 +190,4 @@ flat = true
 [connection signal="text_changed" from="MarginContainer/InfoStructure/InformationEdit/EditableFields/LocationInfo/ScrollContainer/Edit" to="." method="OnLocationChanged_Signal"]
 [connection signal="text_changed" from="MarginContainer/InfoStructure/InformationEdit/EditableFields/DescriptionInfo/ScrollContainer/Edit" to="." method="OnDescriptionChanged_Signal"]
 [connection signal="pressed" from="MarginContainer/BackButton/BackButton" to="." method="OnBackButtonPressed_Signal"]
+[connection signal="pressed" from="MarginContainer/BackButton/ConfirmButton" to="." method="OnConfirmButtonPressed_Signal"]

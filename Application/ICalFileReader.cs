@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 public partial class ICalFileReader : Node
 {
 	[Export] private HttpRequest RequestNode;
-	[Signal] public delegate void OnReadyEventHandler();
+	public static event Action OnReady;
 	
 	private const string utwenteRoosterICalLink =
 		"https://rooster.utwente.nl/ical?6569c5eb&group=true&eu=czI1NTYxNTQ=&h=V5QsZ8N6rV__HKkSVTgWhYTi7Caox_owB_BHwVSbRCM=";
@@ -105,7 +106,7 @@ public partial class ICalFileReader : Node
 			GD.Print($"[PATH]: {e.Message}");
 		}
 		
-		EmitSignal(SignalName.OnReady);
+		OnReady?.Invoke();
 	}
 
 	private void ReadFile(string globalPathICalFile)
@@ -150,10 +151,29 @@ public partial class ICalFileReader : Node
 	private static void ParseEndDate(string line) => _currentEventData.EndDate = ParseICSDateTime(line);
     
 	private static void ParseStartDate(string line) => _currentEventData.StartDate = ParseICSDateTime(line);
-	    
-	private static void ParseSummaryLine(string line) => _currentEventData.Name = line.Split(":")[1];
 
-	private static void ParseDescription(string line) => _currentEventData.Description = line;
+	private static void ParseSummaryLine(string line)
+	{
+		string result = line.Split(":")[1];
+		result = Regex.Replace(result, @"\d+$", "");
+		_currentEventData.Name = result;
+	} 
+
+	private static void ParseDescription(string line)
+	{
+		const string pattern = @"Type:\s*(.*?)(?:\\n|$)";
+		
+		Match match = Regex.Match(line, pattern);
+
+		if (match.Success)
+		{
+			_currentEventData.Description = match.Groups[1].Value;
+		}
+		else
+		{
+			GD.Print("[DESCRIPTION] No match found");
+		}
+	} 
 
 	private static void ParseLocationLine(string line)
 	{
@@ -175,5 +195,47 @@ public partial class ICalFileReader : Node
 		DateTime dayInQuestion = new DateTime(year, month, day);
 
 		return _dateEvents.Where(dateEvent => dateEvent.StartDate.Date == dayInQuestion.Date).ToList();
+	}
+
+	public static void AddDateEvent(DateEventData data)
+	{
+		if (_dateEvents.Contains(data))
+		{
+			GD.Print("DATA ALREADY IN LIST");
+			GD.Print(data);
+			return;
+		}
+
+		_dateEvents.Add(data);
+
+		OnReady?.Invoke();
+	}
+	
+	public static void EditDateEvent(DateEventData oldData, DateEventData editedData)
+	{
+		if (!_dateEvents.Contains(oldData))
+		{
+			GD.Print("DATA NOT IN LIST");
+			GD.Print(oldData);
+			return;
+		}
+		
+		int index = _dateEvents.IndexOf(oldData);
+		_dateEvents[index] = editedData;
+		
+		OnReady?.Invoke();
+	}
+
+	public static void RemoveDateEvent(DateEventData data)
+	{
+		if (!_dateEvents.Contains(data))
+		{
+			GD.Print("DATA NOT IN LIST");
+			GD.Print(data);
+			return;
+		}
+		_dateEvents.Remove(data);
+
+		OnReady?.Invoke();
 	}
 }

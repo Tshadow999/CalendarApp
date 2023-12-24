@@ -2,60 +2,39 @@
 
 [ext_resource type="Script" path="res://Application/InfoDisplays/DayEventDisplay.cs" id="1_bps3w"]
 
-[node name="DayEventDisplay" type="Control" node_paths=PackedStringArray("NameLabel", "TimeLabel", "LocationLabel")]
+[node name="DayEventDisplay" type="PanelContainer" node_paths=PackedStringArray("NameLabel", "TimeLabel", "LocationLabel")]
+clip_contents = true
 custom_minimum_size = Vector2(0, 120)
-layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 75.0
 grow_horizontal = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_bps3w")
 NameLabel = NodePath("NameLabel")
 TimeLabel = NodePath("TimeLabel")
 LocationLabel = NodePath("LocationLabel")
 
-[node name="Background" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="NameLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 23.0
-grow_horizontal = 2
+layout_mode = 2
+size_flags_vertical = 0
 theme_type_variation = &"HeaderLarge"
 text = "Cooperative Autonomous Driving"
 horizontal_alignment = 1
 
 [node name="TimeLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 theme_type_variation = &"HeaderMedium"
 text = "13:45 - 16:30"
 horizontal_alignment = 1
 
 [node name="LocationLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -23.0
-grow_horizontal = 2
-grow_vertical = 0
+layout_mode = 2
+size_flags_vertical = 8
 theme_type_variation = &"HeaderSmall"
 text = "TL 2275"
 horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="OnMouseEntered_Signal"]
+[connection signal="mouse_exited" from="." to="." method="OnMouseExited_Signal"]

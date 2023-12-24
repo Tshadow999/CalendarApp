@@ -18,6 +18,7 @@ public partial class EditPopup : PanelContainer
 	private Label _endTimeLabel;
 	
 	private DateEventData _eventData;
+	private DateEventData _editedData;
 
 	public override void _Ready()
 	{
@@ -44,6 +45,8 @@ public partial class EditPopup : PanelContainer
 		_eventData = dateEvent;
 		
 		if (Equals(_eventData, DateEventData.Empty)) return;
+
+		_editedData = _eventData;
 		
 		_startDateLabel.Text = $"{_eventData.StartDate.DayOfWeek} {_eventData.StartDate.Day} {DateTimeHelper.GetMonthFromIndex(_eventData.StartDate.Month)} {_eventData.StartDate.Year}";
 		_endDateLabel.Text = $"{_eventData.StartDate.DayOfWeek} {_eventData.EndDate.Day} {DateTimeHelper.GetMonthFromIndex(_eventData.EndDate.Month)} {_eventData.EndDate.Year}";
@@ -62,15 +65,18 @@ public partial class EditPopup : PanelContainer
 		_endTimeLabel.Visible = !toggleOn;
 	}
 	
-	private void OnTitleEditTextChanged_Signal(string editedText) => _eventData.Name = editedText;
+	private void OnTitleEditTextChanged_Signal(string editedText) => _editedData.Name = editedText;
 	
-	private void OnLocationChanged_Signal(string editedText) => _eventData.Location = editedText;
+	private void OnLocationChanged_Signal(string editedText) => _editedData.Location = editedText;
 
-	private void OnDescriptionChanged_Signal(string editedText) => _eventData.Description = editedText;
+	private void OnDescriptionChanged_Signal(string editedText) => _editedData.Description = editedText;
 
-	private void OnBackButtonPressed_Signal()
+	private void OnBackButtonPressed_Signal() => Visible = false;
+
+	private void OnConfirmButtonPressed_Signal()
 	{
-		Visible = false;
+		if (_eventData != _editedData) ICalFileReader.EditDateEvent(_eventData, _editedData);
+		
+		OnBackButtonPressed_Signal();
 	}
-	
 }

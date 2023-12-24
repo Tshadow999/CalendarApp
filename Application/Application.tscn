@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bylio6enjsoid"]
+[gd_scene load_steps=9 format=3 uid="uid://bylio6enjsoid"]
 
 [ext_resource type="Script" path="res://Application/Application.cs" id="1_1aahp"]
 [ext_resource type="Theme" uid="uid://d3spok86bx8v0" path="res://Shared/Themeing/DefaultTheme.tres" id="1_n17xt"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cdisxdaamrcs6" path="res://Application/InfoDisplays/MonthDateEntry.tscn" id="3_dd5m8"]
 [ext_resource type="StyleBox" uid="uid://b3qj1pydsijm8" path="res://Shared/Themeing/SeparatorLine.tres" id="3_t7rya"]
 [ext_resource type="PackedScene" uid="uid://jb772kwqwc4w" path="res://Application/InfoDisplays/EditPopup.tscn" id="7_40dvd"]
+[ext_resource type="Script" path="res://Application/EventButtons.cs" id="7_xhhas"]
 
 [node name="Application" type="PanelContainer" node_paths=PackedStringArray("DebugLabel", "Carousel", "Content", "PopupContainer")]
 anchors_preset = 15
@@ -324,18 +325,45 @@ vertical_scroll_mode = 3
 [node name="DayEventDisplayer" type="VBoxContainer" parent="MonthCalendar/Content/DayEvents/Scroller"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
 theme_override_constants/separation = 16
 
 [node name="DEBUGLABEL" type="Label" parent="MonthCalendar/Content"]
+visible = false
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 text = "HELLO"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="EventButtons" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 4
+alignment = 1
+script = ExtResource("7_xhhas")
+
+[node name="AddButton" type="Button" parent="EventButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Add"
+
+[node name="EditButton" type="Button" parent="EventButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Edit"
+
+[node name="DeleteButton" type="Button" parent="EventButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Delete
+"
+
 [node name="EditPopup" parent="." instance=ExtResource("7_40dvd")]
 visible = false
 layout_mode = 2
 
 [connection signal="OnCarouselChanged" from="MonthCalendar/Content/CarouselContainer" to="MonthCalendar/Content" method="OnCarouselChanged_Signal"]
+[connection signal="pressed" from="EventButtons/AddButton" to="EventButtons" method="OnAddButtonPressed_Signal"]
+[connection signal="pressed" from="EventButtons/EditButton" to="EventButtons" method="OnEditButtonPressed_Signal"]
+[connection signal="pressed" from="EventButtons/DeleteButton" to="EventButtons" method="OnDeleteButtonPressed_Signal"]

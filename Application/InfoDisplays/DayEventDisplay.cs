@@ -10,6 +10,8 @@ public partial class DayEventDisplay : Control
 
 	[Export] private float DoubleTapThreshold = 0.5f; 
 	private float _lastTapTime;
+
+	private bool _hoverMouse;
 	
 	public override void _Ready()
 	{
@@ -18,21 +20,22 @@ public partial class DayEventDisplay : Control
 	
 	public override void _Input(InputEvent @event)
 	{
-		if (@event is InputEventScreenTouch { Pressed: true })
+		if (_hoverMouse && @event is InputEventScreenTouch { Pressed: true })
 		{
+			GD.Print(Name);
 			float currentTimeSec = Time.GetTicksMsec() / 1000.0f;
 
-			string name = Name;
-			if (name.Contains("Control")) return;
+			// string name = Name; // Convert StringName to string
+			// if (name.Contains("Control")) return;
+			
 			// Check if the time since the last tap is within the double tap threshold
 			if (currentTimeSec - _lastTapTime <= DoubleTapThreshold)
 			{
 				// Reset the last tap time
 				_lastTapTime = 0f;
 
-				//TODO: Have a popup to edit this info
-				
-				
+				Application applicationNode = GetNode<Application>("/root/Application");
+				applicationNode.ToggleEditPopup(true, _eventData);
 			}
 			else
 			{
@@ -45,6 +48,7 @@ public partial class DayEventDisplay : Control
 	public void SetDateEvent(DateEventData dateEventData)
 	{
 		_eventData = dateEventData;
+		Name = $"{_eventData.Name}";
 		UpdateLabelTexts();
 	}
 
@@ -54,5 +58,9 @@ public partial class DayEventDisplay : Control
 		LocationLabel.Text = _eventData.Location;
 		TimeLabel.Text = $"{_eventData.StartDate.TimeOfDay} - {_eventData.EndDate.TimeOfDay}";
 	}
-	
+
+
+	private void OnMouseEntered_Signal() => _hoverMouse = true;
+
+	private void OnMouseExited_Signal() => _hoverMouse = false;
 }

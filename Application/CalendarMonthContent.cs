@@ -14,9 +14,11 @@ public partial class CalendarMonthContent : VBoxContainer
 	[Export] private VBoxContainer DayEventDisplayer;
 
 	[Export(PropertyHint.File, "*.tscn")] private string DayEventDisplayPath;
+	
 	private PackedScene _dayEventScene;
 
 	private MonthDateEntry _monthDateEntry;
+	
 	public override void _Ready()
 	{
 		MonthDateEntry.OnClick += MonthDateEntryOnClick_Signal;
@@ -24,8 +26,7 @@ public partial class CalendarMonthContent : VBoxContainer
 		_dayEventScene = ResourceLoader.Load<PackedScene>(DayEventDisplayPath);
 		
 		// Wait for the file reader to be done.
-		GetNode<ICalFileReader>("/root/IcalFileReader").OnReady += () => 
-			SetMonthDayNumbers(DateTime.Today.Month, DateTime.Today.Year);
+		ICalFileReader.OnReady += () => SetMonthDayNumbers(DateTime.Today.Month, DateTime.Today.Year);
 		
 		ClearDayEventDisplay();
 		

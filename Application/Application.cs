@@ -9,7 +9,7 @@ public partial class Application : PanelContainer
 	[Export] private CarouselContainer Carousel;
 	[Export] private CalendarMonthContent Content;
 	
-	[Export] private PanelContainer PopupContainer;
+	[Export] private EditPopup PopupContainer;
 	
 	[Export] private float SwipeThreshold;
 	
@@ -18,7 +18,7 @@ public partial class Application : PanelContainer
 	public override void _Ready()
 	{
 		Debugger.SetLabel(DebugLabel);
-		PopupContainer.Visible = false;
+		ToggleEditPopup(false, DateEventData.Empty);
 	}
 	
 	public override void _Input(InputEvent @event)
@@ -42,5 +42,12 @@ public partial class Application : PanelContainer
 				Content.HandleSwipe();
 			}
 		}
+	}
+
+	public void ToggleEditPopup(bool value, DateEventData data)
+	{
+		if (value) PopupContainer.Initialize(data);
+		
+		PopupContainer.Visible = value;
 	}
 }
