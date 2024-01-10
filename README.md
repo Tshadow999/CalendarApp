@@ -20,6 +20,4 @@ First off, because I dislike all calendar apps I have tried so far.
 Secondly, it is practise for UI work in Godot.
 
 But most importantly I can now say:
-
-![](https://tenor.com/view/thanos-gif-25117042)
-
+"Fine I'll do it myself"
