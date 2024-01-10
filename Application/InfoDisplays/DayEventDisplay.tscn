@@ -1,16 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://bn8p3bp7qquhb"]
+[gd_scene load_steps=3 format=3 uid="uid://bn8p3bp7qquhb"]
 
 [ext_resource type="Script" path="res://Application/InfoDisplays/DayEventDisplay.cs" id="1_bps3w"]
+[ext_resource type="Theme" uid="uid://d3spok86bx8v0" path="res://Shared/Themeing/DefaultTheme.tres" id="1_k4s74"]
 
 [node name="DayEventDisplay" type="PanelContainer" node_paths=PackedStringArray("NameLabel", "TimeLabel", "LocationLabel")]
 clip_contents = true
-custom_minimum_size = Vector2(0, 120)
+custom_minimum_size = Vector2(0, 175)
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 75.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("1_k4s74")
 script = ExtResource("1_bps3w")
 NameLabel = NodePath("NameLabel")
 TimeLabel = NodePath("TimeLabel")
@@ -36,5 +38,4 @@ theme_type_variation = &"HeaderSmall"
 text = "TL 2275"
 horizontal_alignment = 1
 
-[connection signal="mouse_entered" from="." to="." method="OnMouseEntered_Signal"]
-[connection signal="mouse_exited" from="." to="." method="OnMouseExited_Signal"]
+[connection signal="gui_input" from="." to="." method="OnGuiInput_Signal"]

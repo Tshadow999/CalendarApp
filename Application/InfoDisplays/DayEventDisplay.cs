@@ -10,47 +10,23 @@ public partial class DayEventDisplay : Control
 
 	[Export] private float DoubleTapThreshold = 0.5f; 
 	private float _lastTapTime;
-
-	private bool _hoverMouse;
+	
+	private Application _applicationNode;
 	
 	public override void _Ready()
 	{
+		_applicationNode = GetNode<Application>("/root/Application");
 		UpdateLabelTexts();
-	}
-	
-	public override void _Input(InputEvent @event)
-	{
-		if (_hoverMouse && @event is InputEventScreenTouch { Pressed: true })
-		{
-			GD.Print(Name);
-			float currentTimeSec = Time.GetTicksMsec() / 1000.0f;
-
-			// string name = Name; // Convert StringName to string
-			// if (name.Contains("Control")) return;
-			
-			// Check if the time since the last tap is within the double tap threshold
-			if (currentTimeSec - _lastTapTime <= DoubleTapThreshold)
-			{
-				// Reset the last tap time
-				_lastTapTime = 0f;
-
-				Application applicationNode = GetNode<Application>("/root/Application");
-				applicationNode.ToggleEditPopup(true, _eventData);
-			}
-			else
-			{
-				// Update the last tap time for the next comparison
-				_lastTapTime = currentTimeSec;
-			}
-		}
 	}
 
 	public void SetDateEvent(DateEventData dateEventData)
 	{
 		_eventData = dateEventData;
-		Name = $"{_eventData.Name}";
+		Name = $"{_eventData.Name}_{_eventData.StartDate.TimeOfDay}_{_eventData.EndDate.TimeOfDay}";
 		UpdateLabelTexts();
 	}
+
+	public DateEventData GetDateEventData() => _eventData;
 
 	private void UpdateLabelTexts()
 	{
@@ -59,8 +35,18 @@ public partial class DayEventDisplay : Control
 		TimeLabel.Text = $"{_eventData.StartDate.TimeOfDay} - {_eventData.EndDate.TimeOfDay}";
 	}
 
+	private void OnGuiInput_Signal(InputEvent @event)
+	{
+		if (@event is not InputEventScreenTouch { Pressed: true }) return;
 
-	private void OnMouseEntered_Signal() => _hoverMouse = true;
+		GlobalData data = GetNode<GlobalData>("/root/GlobalData");
+		data.SetSelectedDisplay(this);
+		
+		float currentTimeSec = Time.GetTicksMsec() / 1000.0f;
 
-	private void OnMouseExited_Signal() => _hoverMouse = false;
+		bool doubleTapDone = currentTimeSec - _lastTapTime <= DoubleTapThreshold;
+
+		_lastTapTime = doubleTapDone ? 0f : currentTimeSec;
+		_applicationNode.ToggleEditPopup(doubleTapDone, _eventData);
+	}
 }

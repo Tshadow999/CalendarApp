@@ -16,7 +16,7 @@ corner_radius_bottom_left = 8
 
 [resource]
 default_font = ExtResource("1_fopec")
-default_font_size = 24
+default_font_size = 26
 CheckButton/styles/focus = ExtResource("1_vipqg")
 CheckButton/styles/normal = ExtResource("1_vipqg")
 HeaderLarge/base_type = &"Panel"
