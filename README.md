@@ -20,4 +20,4 @@ First off, because I dislike all calendar apps I have tried so far.
 Secondly, it is practise for UI work in Godot.
 
 But most importantly I can now say:
-![][https://media1.tenor.com/m/u8YEMwIfJGMAAAAC/thanos.gif]
+![](https://media1.tenor.com/m/u8YEMwIfJGMAAAAC/thanos.gif)
