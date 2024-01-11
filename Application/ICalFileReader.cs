@@ -36,6 +36,8 @@ public partial class ICalFileReader : Node
 	private static DateEventData _currentEventData;
 
 	private static bool _previousLineWasLocation;
+
+	private static bool _disableEditing;
 		
 	
 	private readonly Dictionary<string, Action<string>> _propertyActionsDict = new Dictionary<string, Action<string>>
@@ -58,7 +60,8 @@ public partial class ICalFileReader : Node
 		RequestNode.DownloadFile = $"{_totalPath}/rooster.ics";
 		
 		_dateEvents = new List<DateEventData>();
-		// Need to wait a bit before going on.
+
+		// Need to wait a bit before going getting the debugLabel.
 		GetTree().CreateTimer(0.15f).Timeout += OnTimeout;
 	}
 
@@ -96,13 +99,14 @@ public partial class ICalFileReader : Node
 			{
 				string properPath = filePath.Replace("\\", "/");
 				_debugLabel.Text += $"File:{properPath}\n";
+				_disableEditing = properPath.Contains("rooster");
 				ReadFile(properPath);
 			}
 		}
 		catch (Exception e)
 		{
-			// _debugLabel.Visible = true;
-			// _debugLabel.Text += $"[PATH]: {e.Message}\n";
+			_debugLabel.Visible = true;
+			_debugLabel.Text += $"[PATH]: {e.Message}\n";
 			GD.Print($"[PATH]: {e.Message}");
 		}
 		
@@ -139,7 +143,7 @@ public partial class ICalFileReader : Node
 	{
 		if (!line.Contains(EVENT)) return;
 		
-		_currentEventData = new DateEventData();
+		_currentEventData = new DateEventData { Editable = _disableEditing };
 	}
 	
 	private static void ParseEnd(string line)

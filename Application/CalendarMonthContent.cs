@@ -66,7 +66,7 @@ public partial class CalendarMonthContent : VBoxContainer
 
 		foreach (DateEventData dateEventData in dateEvents)
 		{
-			DayEventDisplay dayEvent = _dayEventScene.Instantiate() as DayEventDisplay;
+			DayEventDisplay dayEvent = _dayEventScene.Instantiate<DayEventDisplay>();
 			dayEvent.SetDateEvent(dateEventData);
 			DayEventDisplayer.AddChild(dayEvent);
 		}

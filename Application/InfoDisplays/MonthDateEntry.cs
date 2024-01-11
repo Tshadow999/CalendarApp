@@ -4,7 +4,9 @@ using Godot;
 
 public partial class MonthDateEntry : Control
 {
-	public static event Action<MonthDateEntry> OnClick;
+	private static readonly string ThemeVariant = "SelectedMonthEntry";
+
+	public static Action<MonthDateEntry> OnClick;
 	
 	[Export] private Label DayNumberLabel;
 	[Export] private Panel SelectedDayBackground;
@@ -14,12 +16,12 @@ public partial class MonthDateEntry : Control
 	private int _year;
 	private int _month;
 	private int _day;
-
-	private bool _isSelected = false;
-
+	
 	private PackedScene _dayEventScene;
 
 	private List<DateEventData> _dateEvents;
+
+	private float _lastTapTime;
 
 	public override void _Ready()
 	{
@@ -27,20 +29,40 @@ public partial class MonthDateEntry : Control
 
 		_dateEvents = new List<DateEventData>();
 		
-		OnClick += OnClickEntry;
+		OnClick += Clicked;
 	}
 
-	private void OnClickEntry(MonthDateEntry dateEntry)
+	private void Clicked(MonthDateEntry other)
 	{
-		string themeVariant = this == dateEntry ? "SelectedMonthEntry" : "";
-		Set("theme_type_variation", themeVariant);
+		Set("theme_type_variation", this == other ? ThemeVariant : "");
 	}
+
+	private void OnGuiInput_Signal(InputEvent @event)
+	{
+		if (@event is InputEventScreenTouch { Pressed: true })
+		{
+			OnClick?.Invoke(this);
+			
+			GlobalData.SetSelectedDateTime(new DateTime(_year, _month, _day));
+
+			// Double tap logic
+			float currentTimeSec = Time.GetTicksMsec() / 1000.0f;
+
+			bool doubleTapDone = currentTimeSec - _lastTapTime <= 0.5f;
+			
+			_lastTapTime = doubleTapDone ? 0f : currentTimeSec;
+			
+			if (doubleTapDone) GlobalData.OpenPopup();
+		}
+	}
+	
+	
 
 	public void ClearSelection() => Set("theme_type_variation", "");
 
 	private void CreateDayEvent(DateEventData dateEventData)
 	{
-		DayEvent dayEvent = _dayEventScene.Instantiate() as DayEvent;
+		DayEvent dayEvent = _dayEventScene.Instantiate<DayEvent>();
 
 		DayEventContainer.AddChild(dayEvent);
 		
@@ -79,14 +101,6 @@ public partial class MonthDateEntry : Control
 		SelectedDayBackground.Visible = DateTime.Today.Equals(new DateTime(year, month, day));
 		Color labelColor = DateTime.Today.Equals(new DateTime(year, month, day)) ? Colors.Black : Colors.White;
 		DayNumberLabel.Set("theme_override_colors/font_color", labelColor);
-	}
-
-	public override void _GuiInput(InputEvent @event)
-	{
-		if (@event is InputEventMouseButton { Pressed: true, ButtonIndex: MouseButton.Left })
-		{
-			OnClick?.Invoke(this);
-		}
 	}
 
 	public List<DateEventData> GetDateEvents() => _dateEvents;
