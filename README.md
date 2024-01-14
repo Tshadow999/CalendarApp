@@ -6,7 +6,7 @@ An all purpose calendar application, with loads of customization.
 
 - Month views of all dates; [DONE]
 - Read and display ICS files in the calendar view; [DONE]
-- Add/Edit events;
+- Add/Edit/Delete events0 [DONE];
 - Reminders/Notifications of events;
 - Customization of the application;
  
