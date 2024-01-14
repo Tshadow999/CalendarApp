@@ -47,7 +47,5 @@ public partial class Application : PanelContainer
 	public void ToggleEditPopup(bool value, DateEventData data)
 	{
 		if (value) PopupContainer.Initialize(data);
-		
-		PopupContainer.Visible = value;
 	}
 }

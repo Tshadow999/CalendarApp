@@ -42,6 +42,8 @@ public partial class DayEventDisplay : Control
 		GlobalData data = GetNode<GlobalData>("/root/GlobalData");
 		data.SetSelectedDisplay(this);
 		
+		Set("theme_type_variation", "SelectedMonthEntry");
+		
 		float currentTimeSec = Time.GetTicksMsec() / 1000.0f;
 
 		bool doubleTapDone = currentTimeSec - _lastTapTime <= DoubleTapThreshold;

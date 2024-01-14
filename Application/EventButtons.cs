@@ -1,38 +1,26 @@
-using System;
 using Godot;
 
 public partial class EventButtons : HBoxContainer
 {
-	private DateEventData _eventData;
-	private DateEventData _editedData;
-
-	private GlobalData _globalData;
-
-	public override void _Ready()
-	{
-		base._Ready();
-		_globalData = GetNode<GlobalData>("/root/GlobalData");
-	}
-
-	private void OnAddButtonPressed_Signal()
-	{
-		GlobalData.OpenPopup();
-	}
+	private void OnAddButtonPressed_Signal() => GlobalData.OpenPopup();
 
 	private void OnEditButtonPressed_Signal()
 	{
-		// Do this when done
-		// ICalFileReader.EditDateEvent(_eventData, _editedData);
+		DayEventDisplay selectedDisplay = GlobalData.GetSelectedDisplay();
+
+		if (selectedDisplay == null || !selectedDisplay.GetDateEventData().Editable) return;
+		
+		GlobalData.OpenPopup(selectedDisplay.GetDateEventData());
 	}
 
 	private void OnDeleteButtonPressed_Signal()
 	{
-		DayEventDisplay display = _globalData.GetSelectedDisplay();
+		DayEventDisplay display = GlobalData.GetSelectedDisplay();
 
-		if (display == null) return;
+		if (display == null || !display.GetDateEventData().Editable) return;
+
+		GD.Print(display.GetDateEventData());
 		
-		_eventData = display.GetDateEventData();
-		
-		// ICalFileReader.RemoveDateEvent(_eventData);
+		ICalFileReader.RemoveDateEvent(display.GetDateEventData());
 	}
 }

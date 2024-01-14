@@ -20,6 +20,8 @@ public partial class EditPopup : PanelContainer
 	private DateEventData _eventData;
 	private DateEventData _editedData;
 
+	private bool _isNewEvent;
+
 	public override void _Ready()
 	{
 		_startDateLabel = StartDateContainer.GetChild<Label>(0); // First child 
@@ -27,21 +29,11 @@ public partial class EditPopup : PanelContainer
 		
 		_endDateLabel = EndDateContainer.GetChild<Label>(0); // First child 
 		_endTimeLabel = EndDateContainer.GetChild<Label>(2); // Last child 
-		
-		_eventData = new DateEventData
-		{
-			Name = "Testing Name",
-			Location = "Location test",
-			Description = "Some important description",
-			StartDate = new DateTime(2023, 12, 17, 12, 0, 0),
-			EndDate = new DateTime(2023, 12, 17, 18, 0, 0)
-		};
-		
-		Initialize(_eventData);
 	}
 	
-	public void Initialize(DateEventData dateEvent)
+	public void Initialize(DateEventData dateEvent, bool isNewEvent = false)
 	{
+		_isNewEvent = isNewEvent;
 		_eventData = dateEvent;
 		
 		if (Equals(_eventData, DateEventData.Empty)) return;
@@ -57,12 +49,21 @@ public partial class EditPopup : PanelContainer
 		NameEdit.Text = _eventData.Name;
 		LocationEdit.Text = _eventData.Location;
 		DescriptionEdit.Text = _eventData.Description;
+		
+		Visible = true;
 	}
 	
 	private void AllDayToggled_Signal(bool toggleOn)
 	{
 		_startTimeLabel.Visible = !toggleOn;
 		_endTimeLabel.Visible = !toggleOn;
+
+		if (!toggleOn) return;
+
+		DateTime selected = GlobalData.GetSelectedDateTime();
+		
+		_editedData.StartDate = new DateTime(selected.Year, selected.Month, selected.Day, 0, 0, 0);
+		_editedData.EndDate = new DateTime(selected.Year, selected.Month, selected.Day, 23, 59, 59);
 	}
 	
 	private void OnTitleEditTextChanged_Signal(string editedText) => _editedData.Name = editedText;
@@ -75,6 +76,14 @@ public partial class EditPopup : PanelContainer
 
 	private void OnConfirmButtonPressed_Signal()
 	{
+		if (_isNewEvent)
+		{
+			ICalFileReader.AddDateEvent(_editedData);
+			
+			OnBackButtonPressed_Signal();
+			return;
+		}
+		
 		if (_eventData != _editedData) ICalFileReader.EditDateEvent(_eventData, _editedData);
 		
 		OnBackButtonPressed_Signal();

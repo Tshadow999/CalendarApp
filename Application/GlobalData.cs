@@ -3,7 +3,7 @@ using Godot;
 
 public partial class GlobalData : Node
 {
-    private DayEventDisplay _selectedEventDisplay;
+    private static DayEventDisplay _selectedEventDisplay;
     private static EditPopup _editPopup;
     private static DateTime _selectedDateTime;
 
@@ -17,7 +17,7 @@ public partial class GlobalData : Node
 
     public void SetSelectedDisplay(DayEventDisplay display) => _selectedEventDisplay = display;
 
-    public DayEventDisplay GetSelectedDisplay() => _selectedEventDisplay;
+    public static DayEventDisplay GetSelectedDisplay() => _selectedEventDisplay;
 
     public static void OpenPopup()
     {
@@ -27,7 +27,11 @@ public partial class GlobalData : Node
             EndDate = GetSelectedDateTime(),
         };
         
-        _editPopup.Initialize(newData);
-        _editPopup.Visible = true;
+        _editPopup.Initialize(newData, true);
+    }
+    
+    public static void OpenPopup(DateEventData existingData)
+    {
+        _editPopup.Initialize(existingData);
     }
 }

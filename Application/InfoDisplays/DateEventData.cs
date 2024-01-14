@@ -39,5 +39,5 @@ public struct DateEventData
     public override int GetHashCode() => HashCode.Combine(Name, StartDate, EndDate);
 
 
-    public override string ToString() => $"{Name}\n{Description}\nLocation:{Location}\nFrom:{StartDate}\nUntil:{EndDate}\n";
+    public override string ToString() => $"{Name}\n{Description}\nLocation:{Location}\nFrom:{StartDate}\nUntil:{EndDate}\nEditable:{Editable}";
 }

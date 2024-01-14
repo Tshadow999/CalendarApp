@@ -86,6 +86,7 @@ public partial class CalendarMonthContent : VBoxContainer
 
 	private void SetMonthDayNumbers(int month, int year)
 	{
+		ClearDayEventDisplay();
 		int daysInCurrentMonth = DateTime.DaysInMonth(year, month);
 		
 		DateTime firstDayOfMonth = new DateTime(year, month, 1);

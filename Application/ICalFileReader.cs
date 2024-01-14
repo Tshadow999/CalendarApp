@@ -143,7 +143,7 @@ public partial class ICalFileReader : Node
 	{
 		if (!line.Contains(EVENT)) return;
 		
-		_currentEventData = new DateEventData { Editable = _disableEditing };
+		_currentEventData = new DateEventData { Editable = !_disableEditing };
 	}
 	
 	private static void ParseEnd(string line)
@@ -239,7 +239,7 @@ public partial class ICalFileReader : Node
 			return;
 		}
 		_dateEvents.Remove(data);
-
+		
 		OnReady?.Invoke();
 	}
 }
