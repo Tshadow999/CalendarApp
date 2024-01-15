@@ -21,6 +21,7 @@ config/icon="res://Shared/icon.svg"
 Debugger="*res://Core/Debugger.cs"
 IcalFileReader="*res://Application/IcalFileReader.tscn"
 GlobalData="*res://Application/GlobalData.cs"
+Colors="*res://Application/Colors.tscn"
 
 [debug]
 

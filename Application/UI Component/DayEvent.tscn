@@ -1,16 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1xelpsma5wqp"]
+[gd_scene load_steps=6 format=3 uid="uid://b1xelpsma5wqp"]
 
 [ext_resource type="Theme" uid="uid://d3spok86bx8v0" path="res://Shared/Themeing/DefaultTheme.tres" id="1_1g4jd"]
 [ext_resource type="Script" path="res://Application/UI Component/DayEvent.cs" id="1_f4w6t"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mrul"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xw137"]
 
-[node name="DayEvent" type="PanelContainer"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4hw4"]
+bg_color = Color(0.101961, 0.427451, 0.545098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03acb"]
+bg_color = Color(0.6, 0.133333, 0.6, 1)
+
+[node name="DayEvent" type="PanelContainer" node_paths=PackedStringArray("LeftRect", "RightRect")]
 custom_minimum_size = Vector2(0, 10)
 anchors_preset = 10
 anchor_right = 1.0
@@ -19,5 +20,23 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_filter = 1
 theme = ExtResource("1_1g4jd")
-theme_override_styles/panel = SubResource("StyleBoxFlat_5mrul")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xw137")
 script = ExtResource("1_f4w6t")
+LeftRect = NodePath("HBoxContainer/LeftPanel")
+RightRect = NodePath("HBoxContainer/RightPanel")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LeftPanel" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_y4hw4")
+
+[node name="RightPanel" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_03acb")

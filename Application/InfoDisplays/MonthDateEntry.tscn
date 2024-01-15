@@ -39,6 +39,7 @@ size_flags_vertical = 3
 theme_override_constants/separation = 6
 
 [node name="SelectedDayBackground" type="Panel" parent="."]
+visible = false
 custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 size_flags_horizontal = 4

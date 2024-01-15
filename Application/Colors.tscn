@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dijgisowgysd7"]
+
+[ext_resource type="Script" path="res://Application/CalendarColors.cs" id="1_7tqpd"]
+
+[node name="Colors" type="Node"]
+script = ExtResource("1_7tqpd")

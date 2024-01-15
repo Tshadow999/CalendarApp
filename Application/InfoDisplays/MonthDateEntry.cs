@@ -4,7 +4,7 @@ using Godot;
 
 public partial class MonthDateEntry : Control
 {
-	private static readonly string ThemeVariant = "SelectedMonthEntry";
+	private const string THEME_VARIANT = "SelectedMonthEntry";
 
 	public static Action<MonthDateEntry> OnClick;
 	
@@ -34,7 +34,7 @@ public partial class MonthDateEntry : Control
 
 	private void Clicked(MonthDateEntry other)
 	{
-		Set("theme_type_variation", this == other ? ThemeVariant : "");
+		Set("theme_type_variation", this == other ? THEME_VARIANT : "");
 	}
 
 	private void OnGuiInput_Signal(InputEvent @event)
@@ -55,8 +55,6 @@ public partial class MonthDateEntry : Control
 			if (doubleTapDone) GlobalData.OpenPopup();
 		}
 	}
-	
-	
 
 	public void ClearSelection() => Set("theme_type_variation", "");
 
@@ -67,7 +65,13 @@ public partial class MonthDateEntry : Control
 		DayEventContainer.AddChild(dayEvent);
 		
 		dayEvent.SetEvent(dateEventData);
-		dayEvent.SetColor(Colors.IndianRed);
+
+		if (!CalendarColors.GetColor(dateEventData.Description, out Color c))
+		{
+			GD.Print($"COLOR NOT FOUND: {dateEventData.Description}");
+		}
+		dayEvent.SetColor(c);
+		
 	}
 
 	public void SetLabelDate(int day, int month, int year)

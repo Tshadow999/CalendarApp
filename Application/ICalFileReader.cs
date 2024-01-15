@@ -38,7 +38,6 @@ public partial class ICalFileReader : Node
 	private static bool _previousLineWasLocation;
 
 	private static bool _disableEditing;
-		
 	
 	private readonly Dictionary<string, Action<string>> _propertyActionsDict = new Dictionary<string, Action<string>>
 	{
@@ -159,7 +158,7 @@ public partial class ICalFileReader : Node
 	private static void ParseSummaryLine(string line)
 	{
 		string result = line.Split(":")[1];
-		result = Regex.Replace(result, @"\d+$", "");
+		result = Regex.Replace(result, @"\d+", "");
 		_currentEventData.Name = result;
 	} 
 
