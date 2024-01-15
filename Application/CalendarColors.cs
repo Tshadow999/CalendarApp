@@ -7,6 +7,10 @@ using System.Linq;
 public partial class CalendarColors : Node
 {
     private const string COLOR_DIR = "/Colors";
+
+    private const string defaultValues =
+        "{\n    \"Lecture\": \"f25a12\",\n    \"Lecture Online\": \"ff0000\",\n    \"Lectorial\": \"ff8000\",\n    \"Tutorial\": \"111d6f\",\n    \"Practical\": \"008000\",\n    \"Project unsupervised\": \"00ff00\",\n    \"Project supervised\": \"400000\",\n    \"Presentation\": \"808000\",\n    \"Exam\": \"8000ff\",\n    \"Self study unsupervised\": \"1866f5\",\n    \"Self study supervised\": \"123456\",\n    \"Q&A\": \"808080\",\n\t\"Other\": \"eda012\",\n    \"Other Online\": \"eda012\",\n    \"Other Non-Educational\": \"a45200\"\n}\n";
+    
     private static Dictionary<string, string> _colorTypeDict;
 
     private static string _dirPath;
@@ -16,26 +20,20 @@ public partial class CalendarColors : Node
     {
         _colorTypeDict = new Dictionary<string, string>();
         
-        // For testing saving and loading
-        // _colorTypeDict.Add("EY1", Colors.Red.ToHtml());
-        // _colorTypeDict.Add("EY2", Colors.BlueViolet.ToHtml());
-        // _colorTypeDict.Add("EY3", Colors.Lime.ToHtml());
-        
         _dirPath = OS.GetUserDataDir() + COLOR_DIR;
 
         if (!Directory.Exists(_dirPath)) Directory.CreateDirectory(_dirPath);
 
         _filePath = _dirPath + "/colors.json";
 
-        if (File.Exists(_filePath))
+        // if there is an 'empty' file we want to reset
+        if (File.Exists(_filePath) && File.OpenRead(_filePath).Length > 10)
         {
             LoadColorDictionary(_filePath);
         }
         else
         {
-            FileStream fs = File.Create(_filePath);
-            fs.Close();
-            
+            _colorTypeDict = (Dictionary<string, string>) Json.ParseString(defaultValues);
             SaveColorDictionary(_filePath);
         }
     }
@@ -45,7 +43,6 @@ public partial class CalendarColors : Node
         try
         {
             string readableString = File.ReadAllText(filePath);
-            GD.Print(readableString);
             _colorTypeDict = (Dictionary<string, string>) Json.ParseString(readableString);
         }
         catch (Exception ex)
