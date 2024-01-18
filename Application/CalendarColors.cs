@@ -69,11 +69,11 @@ public partial class CalendarColors : Node
         if (_colorTypeDict.TryGetValue(type, out string s))
         {
             c = Color.FromHtml(s);
-            GD.Print($"t:{type}, c:{c}, b:True");
+            // GD.Print($"t:{type}, c:{c}, b:True");
             return true;
         }
         c = Colors.White;
-        GD.Print($"t:{type}, c:{c}, b:False");
+        // GD.Print($"t:{type}, c:{c}, b:False");
         return false;
     }
 

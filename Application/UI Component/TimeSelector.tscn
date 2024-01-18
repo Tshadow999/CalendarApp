@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfwknrb3y4a5s"]
+
+[ext_resource type="Theme" uid="uid://d3spok86bx8v0" path="res://Shared/Themeing/DefaultTheme.tres" id="1_efqsn"]
+[ext_resource type="Script" path="res://Application/UI Component/TimeSelector.cs" id="2_3iats"]
+
+[node name="TimeSelector" type="HBoxContainer" node_paths=PackedStringArray("HourSpinBox", "MinSpinBox")]
+custom_minimum_size = Vector2(350, 50)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_right = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme = ExtResource("1_efqsn")
+theme_override_constants/separation = 0
+alignment = 1
+script = ExtResource("2_3iats")
+HourSpinBox = NodePath("HourSpinBox")
+MinSpinBox = NodePath("MinSpinBox")
+
+[node name="HourSpinBox" type="SpinBox" parent="."]
+layout_mode = 2
+focus_next = NodePath("../MinSpinBox")
+max_value = 23.0
+value = 17.0
+allow_greater = true
+allow_lesser = true
+alignment = 1
+
+[node name="MinSpinBox" type="SpinBox" parent="."]
+layout_mode = 2
+focus_previous = NodePath("../HourSpinBox")
+max_value = 55.0
+step = 5.0
+allow_greater = true
+allow_lesser = true
+alignment = 1
+
+[connection signal="value_changed" from="HourSpinBox" to="." method="OnHourSpinBoxValueChanged_Signal"]
+[connection signal="value_changed" from="MinSpinBox" to="." method="OnMinSpinBoxValueChanged_Signal"]

@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://jb772kwqwc4w"]
+[gd_scene load_steps=6 format=3 uid="uid://jb772kwqwc4w"]
 
 [ext_resource type="Theme" uid="uid://d3spok86bx8v0" path="res://Shared/Themeing/DefaultTheme.tres" id="1_i2mn4"]
 [ext_resource type="Script" path="res://Application/InfoDisplays/EditPopup.cs" id="1_igios"]
 [ext_resource type="StyleBox" uid="uid://ded3fnrx28q33" path="res://Shared/Themeing/DefaultLine75Longer.tres" id="3_x2vl5"]
+[ext_resource type="PackedScene" uid="uid://dfwknrb3y4a5s" path="res://Application/UI Component/TimeSelector.tscn" id="4_mn250"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4xh0a"]
 bg_color = Color(0.109804, 0.109804, 0.109804, 1)
 
-[node name="EditPopup" type="PanelContainer" node_paths=PackedStringArray("NameEdit", "LocationEdit", "DescriptionEdit", "StartDateContainer", "EndDateContainer")]
+[node name="EditPopup" type="PanelContainer" node_paths=PackedStringArray("NameEdit", "LocationEdit", "DescriptionEdit", "StartDateContainer", "EndDateContainer", "Selector")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -21,6 +22,7 @@ LocationEdit = NodePath("MarginContainer/InfoStructure/InformationEdit/EditableF
 DescriptionEdit = NodePath("MarginContainer/InfoStructure/InformationEdit/EditableFields/DescriptionInfo/ScrollContainer/Edit")
 StartDateContainer = NodePath("MarginContainer/InfoStructure/InformationEdit/EditableFields/DateInfo/StartDate")
 EndDateContainer = NodePath("MarginContainer/InfoStructure/InformationEdit/EditableFields/DateInfo/EndDate")
+Selector = NodePath("MarginContainer/TimeSelector")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -76,6 +78,7 @@ text = "Friday 15 Dec. 2023"
 [node name="Spacer" type="Control" parent="MarginContainer/InfoStructure/InformationEdit/EditableFields/DateInfo/StartDate"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 
 [node name="Time" type="Label" parent="MarginContainer/InfoStructure/InformationEdit/EditableFields/DateInfo/StartDate"]
 layout_mode = 2
@@ -92,6 +95,7 @@ text = "Friday 15 Dec. 2023"
 [node name="Spacer" type="Control" parent="MarginContainer/InfoStructure/InformationEdit/EditableFields/DateInfo/EndDate"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 
 [node name="Time" type="Label" parent="MarginContainer/InfoStructure/InformationEdit/EditableFields/DateInfo/EndDate"]
 layout_mode = 2
@@ -184,9 +188,15 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Confirm"
 
+[node name="TimeSelector" parent="MarginContainer" instance=ExtResource("4_mn250")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
 [connection signal="text_changed" from="MarginContainer/InfoStructure/EventNameContainer/NameEdit" to="." method="OnTitleEditTextChanged_Signal"]
 [connection signal="text_submitted" from="MarginContainer/InfoStructure/EventNameContainer/NameEdit" to="." method="OnTitleEditTextSubmitted_Signal"]
 [connection signal="toggled" from="MarginContainer/InfoStructure/InformationEdit/EditableFields/DateInfo/DayToggle" to="." method="AllDayToggled_Signal"]
+[connection signal="gui_input" from="MarginContainer/InfoStructure/InformationEdit/EditableFields/DateInfo/StartDate" to="." method="OnStartDateGuiInput_Signal"]
+[connection signal="gui_input" from="MarginContainer/InfoStructure/InformationEdit/EditableFields/DateInfo/EndDate" to="." method="OnEndDateGuiInput_Signal"]
 [connection signal="text_changed" from="MarginContainer/InfoStructure/InformationEdit/EditableFields/LocationInfo/ScrollContainer/Edit" to="." method="OnLocationChanged_Signal"]
 [connection signal="text_changed" from="MarginContainer/InfoStructure/InformationEdit/EditableFields/DescriptionInfo/ScrollContainer/Edit" to="." method="OnDescriptionChanged_Signal"]
 [connection signal="pressed" from="MarginContainer/BackButton/BackButton" to="." method="OnBackButtonPressed_Signal"]

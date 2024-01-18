@@ -15,7 +15,7 @@ public partial class GlobalData : Node
     public static void SetSelectedDateTime(DateTime date) => _selectedDateTime = date;
     public static DateTime GetSelectedDateTime() => _selectedDateTime;
 
-    public void SetSelectedDisplay(DayEventDisplay display) => _selectedEventDisplay = display;
+    public static void SetSelectedDisplay(DayEventDisplay display) => _selectedEventDisplay = display;
 
     public static DayEventDisplay GetSelectedDisplay() => _selectedEventDisplay;
 

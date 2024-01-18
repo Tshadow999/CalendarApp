@@ -39,10 +39,11 @@ public partial class DayEventDisplay : Control
 	{
 		if (@event is not InputEventScreenTouch { Pressed: true }) return;
 
-		GlobalData data = GetNode<GlobalData>("/root/GlobalData");
-		data.SetSelectedDisplay(this);
+		GlobalData.SetSelectedDisplay(this);
 		
 		Set("theme_type_variation", "SelectedMonthEntry");
+
+		if (!_eventData.Editable) return;
 		
 		float currentTimeSec = Time.GetTicksMsec() / 1000.0f;
 

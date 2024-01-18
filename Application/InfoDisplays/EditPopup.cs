@@ -10,6 +10,8 @@ public partial class EditPopup : PanelContainer
 	
 	[Export] private HBoxContainer StartDateContainer;
 	[Export] private HBoxContainer EndDateContainer;
+
+	[Export] private TimeSelector Selector;
 	
 	private Label _startDateLabel;
 	private Label _startTimeLabel;
@@ -51,6 +53,7 @@ public partial class EditPopup : PanelContainer
 		DescriptionEdit.Text = _eventData.Description;
 		
 		Visible = true;
+		Selector.Visible = false;
 	}
 	
 	private void AllDayToggled_Signal(bool toggleOn)
@@ -87,5 +90,37 @@ public partial class EditPopup : PanelContainer
 		if (_eventData != _editedData) ICalFileReader.EditDateEvent(_eventData, _editedData);
 		
 		OnBackButtonPressed_Signal();
+	}
+
+	private void OnStartDateGuiInput_Signal(InputEvent @event)
+	{
+		if (@event is InputEventScreenTouch { Pressed: true } eventScreenTouch)
+		{
+			Selector.Init(this, true);
+		}
+	}
+
+	private void OnEndDateGuiInput_Signal(InputEvent @event)
+	{
+		if (@event is InputEventScreenTouch { Pressed: true } eventScreenTouch)
+		{
+			Selector.Init(this, false);
+		}
+	}
+
+	public void SetTime(Vector2I time, bool startTime)
+	{
+		if (startTime)
+		{
+			_startTimeLabel.Text = $"{time.X:00}:{time.Y:00}";
+			_editedData.StartDate = new DateTime(_editedData.StartDate.Year, _editedData.StartDate.Month,
+				_editedData.StartDate.Day, time.X, time.Y, 0);
+		}
+		else
+		{
+			_endTimeLabel.Text = $"{time.X:00}:{time.Y:00}";
+			_editedData.EndDate = new DateTime(_editedData.EndDate.Year, _editedData.EndDate.Month,
+				_editedData.EndDate.Day, time.X, time.Y, 0);
+		}
 	}
 }
