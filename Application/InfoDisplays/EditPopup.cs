@@ -60,6 +60,7 @@ public partial class EditPopup : PanelContainer
 	{
 		_startTimeLabel.Visible = !toggleOn;
 		_endTimeLabel.Visible = !toggleOn;
+		Selector.Visible = false;
 
 		if (!toggleOn) return;
 

@@ -13,6 +13,7 @@ public partial class TimeSelector : HBoxContainer
 	{
 		_editPopup = popup;
 		_startTime = startTime;
+		HourSpinBox.Value = DateTime.Now.Hour;
 		Visible = true;
 	}
 

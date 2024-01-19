@@ -9,8 +9,7 @@ public partial class CalendarColors : Node
     private const string COLOR_DIR = "/Colors";
 
     private const string defaultValues =
-        "{\n    \"Lecture\": \"f25a12\",\n    \"Lecture Online\": \"ff0000\",\n    \"Lectorial\": \"ff8000\",\n    \"Tutorial\": \"111d6f\",\n    \"Practical\": \"008000\",\n    \"Project unsupervised\": \"00ff00\",\n    \"Project supervised\": \"400000\",\n    \"Presentation\": \"808000\",\n    \"Exam\": \"8000ff\",\n    \"Self study unsupervised\": \"1866f5\",\n    \"Self study supervised\": \"123456\",\n    \"Q&A\": \"808080\",\n\t\"Other\": \"eda012\",\n    \"Other Online\": \"eda012\",\n    \"Other Non-Educational\": \"a45200\"\n}\n";
-    
+        "{\n  \"Exam\": \"730084\",\n  \"Lectorial\": \"d65300\",\n  \"Lecture\": \"d60000\",\n  \"Lecture Online\": \"7f3100\",\n  \"Other\": \"ffe300\",\n  \"Other Non-Educational\": \"ffe300\",\n  \"Other Online\": \"ffe300\",\n  \"Practical\": \"0f852d\",\n  \"Presentation\": \"9eff00\",\n  \"Project supervised\": \"311300\",\n  \"Project unsupervised\": \"15dc11\",\n  \"Q&A\": \"7f7f7f\",\n  \"Self study supervised\": \"320083\",\n  \"Self study unsupervised\": \"2ce7c8\",\n  \"Tutorial\": \"2c48e8\"\n}";
     private static Dictionary<string, string> _colorTypeDict;
 
     private static string _dirPath;
